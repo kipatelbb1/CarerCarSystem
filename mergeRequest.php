@@ -1,6 +1,11 @@
 <?php 
 
 	session_start(); 
+
+	ini_set('display_errors',1);
+	ini_set('display_startup_errors',1);
+	error_reporting(-1);
+
 	//ADD REQUEST LINE TO REQUEST 
 	include 'connection.php';
 
@@ -8,6 +13,7 @@
 
 	$submit_option = $_POST['submit_val']; 
 	$requestID = $_POST['requestID']; 
+
 
 	if($submit_option=="Yes")
 	{

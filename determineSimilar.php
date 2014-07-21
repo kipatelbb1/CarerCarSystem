@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	echo '<link rel="stylesheet" type="text/css" href="style/bootstrap.min.css" />';
 
 	if(!(isset($_POST['date_request'])))
 	{
@@ -7,7 +8,9 @@
 		exit();
 	}
 
-	
+	ini_set('display_errors',1);
+	ini_set('display_startup_errors',1);
+	error_reporting(-1);
 
 	include 'connection.php'; 
 
@@ -26,23 +29,35 @@
 
 	$tranTime = substr($PTime, 0,2); 
 
+
 	//FIND EXACT MATCHES: 
 	$query = "SELECT * FROM request WHERE date_request='$Date' AND PTime='00:" . $tranTime . ":00'"; 
 	$set = mysqli_query($con, $query); 
 	$num_rows = mysqli_num_rows($set); 
 
-	$row = mysqli_fetch_array($set); 
-	$requestID = $row['requestID']; 
+	$requestID = mysqli_fetch_array($set)['requestID'];
 
+	// while($row = mysqli_fetch_array($set))
+	// {
+	// 	echo $row['requestID'] . "<br/>"; 
+	// 	$requestID = $row['requestID']; 
+	// 	echo $row['PTime'] . "<br/>"; 
+	// }
+
+
+
+	
 	if($num_rows>=1)
 	{
 		//ASK IF THEY WANT TO MERGE THE REQUESTS. 
+		
 		echo "<div class='row col-xs-12'>";
 		echo "<h2>Someone else has requested the same time as you, would you like to merge your request with thiers?</h2><br/>"; 
 		echo "<form method='POST' action='mergeRequest.php'>";
 			echo "<input type='submit' name='submit_val' value='Yes'>";
 			echo "<input type='submit' name='submit_val' value='No'>";
-			echo "<input type='hidden' name='requestID' value=" . $requestID . ">"; 
+
+			echo "<input type='hidden' name='requestID' value='" . $requestID . "'>"; 
 		echo "</form>";
 		echo "</div>";
 
@@ -56,6 +71,8 @@
 		$query = "SELECT * FROM request WHERE date_request='$Date' AND PTime='00:" . $toBack . ":00'"; 
 		$set = mysqli_query($con, $query); 
 		$num_rows = mysqli_num_rows($set); 
+
+		$requestID = mysqli_fetch_array($set)['requestID'];
 
 		if($num_rows>=1)
 		{
@@ -77,6 +94,8 @@
 			$query = "SELECT * FROM request WHERE date_request='$Date' AND PTime='00:" . $toForward . ":00'"; 
 			$set = mysqli_query($con, $query); 
 			$num_rows = mysqli_num_rows($set); 
+
+			$requestID = mysqli_fetch_array($set)['requestID'];
 
 			if($num_rows>=1)
 			{
