@@ -80,7 +80,7 @@
 
 			 
 					<div class="panel-body">
-					<form action="determineSimilar.php" method="POST" id="requestForm">
+					<form action="determineSimilar.php" method="POST" id="requestForm" onsubmit="return checkInputs();">
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label">
 								Date: 
@@ -168,7 +168,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" value="<?php echo $_SESSION['name'] ?>" name="name" id="tester">
+								 <input type="text" value="<?php echo $_SESSION['name'] ?>" name="name" id="tester" disabled>
 							</div>
 						</div>
 
