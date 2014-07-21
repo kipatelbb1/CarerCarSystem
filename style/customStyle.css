@@ -1,0 +1,192 @@
+body 
+{
+	font-family: Harabara ; 
+}
+
+/*HEADER*/
+
+.line-break
+{
+	color: grey;
+	border: 1px solid grey; 
+}
+
+.logo
+{
+	margin-top: 10px; 
+}
+
+.page-header
+{
+	font-weight: bold; 
+}
+
+/*END HEADER*/
+
+
+/*FORM ATTRIBUTE STYLES*/
+.form-label
+{
+	margin-top: 10px;
+	margin-bottom: 10px; 
+}
+/*END FORM ATTRIBUTE STYLES*/
+
+/*CUSTOM PANEL*/
+
+.panel-heading
+{
+	cursor: pointer;
+}
+
+/*END CUSTOM PANEL*/
+
+/*STATUS BAR*/
+.status_title
+{
+
+}
+
+.status-body
+{
+	font-size: 0.5em; 
+}
+
+.status_format
+{
+	text-align: center; 
+	font-size: 1em; 
+}
+/*END STATUS BAR*/
+
+
+/*CALENDER FORMAT*/
+table
+{
+	margin-top: 50px; 
+	margin-left: 25px; 
+}
+
+th, tr, td 
+{
+	border: 1px solid grey; 
+	padding: 10px; 
+	padding-right: 120px; 
+}
+
+.top-header
+{
+	background-color: #eee; 
+}
+/*END CALENDER FORMAT*/
+
+/*FOOTER*/
+.footer
+{
+	display: inline; 
+}
+
+.internal
+{
+	text-align: left; 
+	display: inline; 
+	color: red;
+	font-weight: bold; 
+
+}
+
+.footnote
+{
+	
+	display: inline; 
+	text-align: right; 
+}
+/*END FOOTER*/
+
+
+
+.mobile-booking
+{
+	border-top: 1px solid black; 
+	border-bottom: 1px solid black; 
+	padding-left: 15px;  
+	padding-right: 15px; 
+
+	text-align: left; 
+
+}
+
+.login_box
+{
+
+	display: block ; 
+}
+
+.welcome
+{
+	text-align: right; 
+}
+
+.requestRec
+{
+	font-size: 2em; 
+	text-align: center; 
+
+}
+
+.req_title
+{
+	margin-top: 0px; 
+	margin-bottom: 10px; 
+}
+
+.requestInfo
+{
+	font-size: 1em; 
+	margin-bottom: 100px; 
+	text-align: center; 
+}
+
+.recents
+{
+	border: 1px solid #bbb; 
+	padding: 10px; 
+	width: 100%; 
+	margin-bottom: 20px; 
+	cursor: pointer; 
+	font-size: 1.3em; 
+
+}
+
+
+.update_title
+{
+	font-size: 1.5em; 
+}
+
+
+/*VIEW REQUEST PAGE*/
+.request_title
+{
+	font-size: 2em; 
+	margin-bottom: 10px; 
+	text-decoration: underline; 
+}
+
+.weekoff
+{
+	font-size: 2em; 
+	font-weight: bold; 
+	text-align: center; 
+	padding-bottom: 0px; 
+	text-decoration: underline; 
+}
+
+
+.mobile-request
+{
+
+	background-color: #eee;
+	border-bottom: 1px dotted black; 
+}
+

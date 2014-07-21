@@ -1,0 +1,14 @@
+1. Alert when Clicked to say that someone has already booked around the hour
+	- User Clicks to Book
+	- A script is run to determine if around the same time there is a similar request. 
+	- Advises that they may want to be added to the session 
+	- Database adds user to the session OR request. 
+	- With TesterID(Tester) <--> TesterID(RequestLine)
+	  AND RequestID(Request) <--> RequestID(RequestLine)
+
+	  Multiple requests may reference the same request but have different testers. 
+
+
+2. Settings updates DB 
+4. Emails
+
