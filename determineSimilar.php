@@ -61,7 +61,7 @@
 		
 		echo "<div class='row";
 					echo "<div class='col-xs-12'>";
-						echo "<h2>Another tester has a time slot booked an hour after your requested slot, Would you like to merge?</h2><br/>"; 
+						echo "<h2>Another tester has a time slot booked at the same time as your requested slot, Would you like to merge?</h2><br/>"; 
 					echo "</div>";
 				echo "</div>";
 
@@ -93,7 +93,7 @@
 			//ASK IF THEY WANT TO MERGE THE REQUESTS. 
 			echo "<div class='row";
 					echo "<div class='col-xs-12'>";
-						echo "<h2>Another tester has a time slot booked an hour after your requested slot, Would you like to merge?</h2><br/>"; 
+						echo "<h2>Another tester has a time slot booked an hour before your requested slot, Would you like to merge?</h2><br/>"; 
 					echo "</div>";
 				echo "</div>";
 
