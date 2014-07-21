@@ -44,6 +44,7 @@ function checkInputs()
 	}
 
 
+	//NEED TO ADD RANGE LIMITS. 
 
 
 

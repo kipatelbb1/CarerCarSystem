@@ -1,9 +1,5 @@
-Validation of form. 
+Validation ranges and settings.  
 Session error messages
 4. Emails
 
-
-5. Neaten up submit forms 
-	- INsert request with banner at top 
-	- Settings update with banner at top. 
 
