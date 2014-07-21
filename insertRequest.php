@@ -22,7 +22,7 @@
 	$Duration = $_POST['duration']; 
 	$Drop = $_POST['DLocation']; 
 	$Veh = $_POST['veh_type'];
-
+	
 	
 	
 

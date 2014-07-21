@@ -190,3 +190,10 @@ th, tr, td
 	border-bottom: 1px dotted black; 
 }
 
+
+.merge-button
+{
+	width: 20%; 
+	padding: 200px;
+	margin-right: 10px; 
+}
