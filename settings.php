@@ -134,7 +134,7 @@ if(!(isset($_SESSION['id'])))
 							</div>
 						</div>
 
-						<input type='hidden' value='$_SESSION['id']' name='id' />
+						<input type='hidden' value='<?php echo $_SESSION['id'] ?>' name='id' />
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-offset-5 form-label">
