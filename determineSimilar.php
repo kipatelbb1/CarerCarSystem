@@ -9,10 +9,6 @@
 		exit();
 	}
 
-	ini_set('display_errors',1);
-	ini_set('display_startup_errors',1);
-	error_reporting(-1);
-
 	include 'connection.php'; 
 
 
@@ -27,7 +23,9 @@
 	$Duration = $_POST['duration']; 
 	$Drop = $_POST['DLocation']; 
 	$Veh = $_POST['veh_type']; 
-	$add = $_POST['add']; 
+	$add = $_POST['add'];
+
+
 
 	setcookie("date_request", $Date);
 	setcookie("pick_up", $PTime); 

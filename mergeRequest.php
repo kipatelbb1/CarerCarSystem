@@ -23,7 +23,6 @@
 	}
 	else
 	{
-		echo "NO" . "<br/>";
 		//Insert Request. 
 		$Date = $_COOKIE['date_request']; 
 		$PTime = $_COOKIE['pick_up']; 
@@ -32,7 +31,7 @@
 		$Drop =  $_COOKIE['DLocation']; 
 		$Veh = $_COOKIE['veh_type']; 
 		$add_Comments = $_COOKIE['add']; 
-
+		
 		$CCenter = "313000"; 
 		$GLCode = "650003"; 
 
@@ -59,7 +58,12 @@
 		$InsertRequestLine = "INSERT INTO requestline(requestID, testerID) VALUES('$requestID', '$testerID')";
 		mysqli_query($con, $InsertRequestLine) or die('Could not complete requested2'); 
 
-		header('Location: requestRecieved.php');
+		echo '<div class="alert alert-success" role="alert">';
+	  	echo '<a href="#" class="alert-link">Success - Request Submitted!</a>';
+		echo '</div>';
+		include 'home.php';
+
+		//header('Location: requestRecieved.php');
 
 
 	}
