@@ -3,3 +3,23 @@ Session error messages
 4. Emails
 
 
+Add Range Limits: 
+
+Request: 
+PLoc <= 99 
+Duration <= 10 [Closed]
+DLocation <= 99 
+Veh_Type <= 20 [Closed]
+add_comments <= 500 
+
+tester: 
+fName <= 99 
+lname <= 99 
+MobileNo == 11
+PLoc <= 99 
+DLocation <= 99 
+email = 100 [Closed]
+
+
+
+
