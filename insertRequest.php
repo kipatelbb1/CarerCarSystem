@@ -26,7 +26,7 @@
 	
 	
 
-	$CCenter = "313000"; 
+	$CCenter = "313211"; 
 	$GLCode = "650003"; 
 
 	$add_Comments = $_POST['add']; 
