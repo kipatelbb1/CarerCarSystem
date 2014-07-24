@@ -205,3 +205,8 @@ th, tr, td
 	margin-left: auto; 
 	display: block;
 }
+
+.form-label input[type="text"]
+{
+	width: 300px; 
+}
