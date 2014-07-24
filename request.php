@@ -82,7 +82,7 @@
 		<!-- TABLE -->
 		<div class="row hidden-xs">
 			<div class="col-xs-12 col-sm-12">
-				<table>
+				<table class="request_table">
 					<tr>
 						<th class="top-header">Request ID</th>
 						<th class="top-header">Date</th>

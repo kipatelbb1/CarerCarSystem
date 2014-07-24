@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2014 at 04:42 PM
+-- Generation Time: Jul 24, 2014 at 03:08 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -38,16 +38,7 @@ CREATE TABLE IF NOT EXISTS `request` (
   `GL_Code` varchar(6) DEFAULT NULL,
   `add_Comments` varchar(500) NOT NULL,
   PRIMARY KEY (`requestID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Table contains data about requests' AUTO_INCREMENT=29 ;
-
---
--- Dumping data for table `request`
---
-
-INSERT INTO `request` (`requestID`, `date_request`, `PTime`, `PLoc`, `Duration`, `DLocation`, `Veh_Type`, `Cost_Center`, `GL_Code`, `add_Comments`) VALUES
-(26, '2014-07-22', '00:14:00', 'Slough Office etc..1', '30', 'dsfdsfs', 'executive', '313000', '650003', 'fkvffkfk'),
-(27, '2014-07-29', '00:13:00', 'Slough Office etc..1', '30', 'dsfdsfs', 'executive', '313000', '650003', 'fkfkfkg'),
-(28, '2014-07-22', '00:13:00', 'Slough Office etc..1', '30', 'dsfdsfs', 'executive', '313000', '650003', 'jfrjfjfg');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Table contains data about requests' AUTO_INCREMENT=32 ;
 
 -- --------------------------------------------------------
 
@@ -60,18 +51,7 @@ CREATE TABLE IF NOT EXISTS `requestline` (
   `requestID` varchar(100) NOT NULL,
   `testerID` varchar(3) NOT NULL,
   PRIMARY KEY (`RequestLineID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Data about each request' AUTO_INCREMENT=54 ;
-
---
--- Dumping data for table `requestline`
---
-
-INSERT INTO `requestline` (`RequestLineID`, `requestID`, `testerID`) VALUES
-(49, '26', '1'),
-(50, '27', '1'),
-(51, '26', '1'),
-(52, '26', '1'),
-(53, '28', '1');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Data about each request' AUTO_INCREMENT=59 ;
 
 -- --------------------------------------------------------
 
@@ -90,14 +70,15 @@ CREATE TABLE IF NOT EXISTS `tester` (
   `Password` varchar(100) NOT NULL,
   `username` varchar(10) NOT NULL,
   PRIMARY KEY (`testerID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Table holds data on the Testers' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Table holds data on the Testers' AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `tester`
 --
 
 INSERT INTO `tester` (`testerID`, `fName`, `lName`, `MobileNo`, `PLocation`, `DLocation`, `email`, `Password`, `username`) VALUES
-(1, 'Sam', 'Smith', '123', 'Slough Office etc..1', 'dsfdsfs', 'example@blackberry.com', '03e9db264eefdedef0ab380e9854c940', 'tester01');
+(1, 'Kiran', 'Patel', '074512365', '200 Bath Road', '200 Bath Road', 'kipatel@blackberry.com', '03e9db264eefdedef0ab380e9854c940', 'kipatel'),
+(2, 'Asif', 'Jafferali', '123', '200 Bath Road', '200 Bath Road', 'ajafferali@blackberry.com', '03e9db264eefdedef0ab380e9854c940', 'ajafferali');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

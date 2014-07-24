@@ -71,7 +71,7 @@ th, tr, td
 {
 	border: 1px solid grey; 
 	padding: 10px; 
-	padding-right: 120px; 
+	padding-right: 100px; 
 }
 
 .top-header
@@ -197,4 +197,11 @@ th, tr, td
 	padding: 200px;
 	margin-right: 10px; 
 	font-size: 3em;  
+}
+
+.request_table
+{
+	margin-right: auto; 
+	margin-left: auto; 
+	display: block;
 }
