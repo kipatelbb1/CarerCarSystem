@@ -304,7 +304,7 @@
 			<div class="col-xs-12">
 				<?php 
 
-					echo '<div class="weekoff">Scedule for:<br/> ' .date("d-m-Y",strtotime('monday this week')).' To '. date("d-m-Y",strtotime("sunday this week")) . '</div>';    
+					echo '<div class="weekoff">Schedule for:<br/> ' .date("d-m-Y",strtotime('monday this week')).' To '. date("d-m-Y",strtotime("sunday this week")) . '</div>';    
 
 					include 'testDate.php';
 				?>

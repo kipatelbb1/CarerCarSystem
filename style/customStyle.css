@@ -176,10 +176,11 @@ th, tr, td
 .weekoff
 {
 	font-size: 2em; 
-	font-weight: bold; 
+	
 	text-align: center; 
 	padding-bottom: 0px; 
-	text-decoration: underline; 
+	/*text-decoration: underline; */
+	
 }
 
 
