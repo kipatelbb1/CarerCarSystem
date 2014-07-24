@@ -75,61 +75,61 @@ if(!(isset($_SESSION['id'])))
 				<div class="panel-body">
 					<form action="updateTesterInfo.php" method="POST">
 						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								First Name
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								 <input type="text" name="fName" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['fName']; ?>" disabled>
 							</div>
 						</div>
 
 						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								Last Name
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								 <input type="text" name="lName" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['lName']; ?>" disabled>
 							</div>
 						</div>
 
 						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								Contact Number
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								 <input type="text" name="num" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['MobileNo']; ?>">
 							</div>
 						</div>
 
 						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								Preffered Pick Up Location
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								 <input type="text" name="PLoc" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['PLocation']; ?>">
 							</div>
 						</div>
 
 						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								Preffered Drop Off Location
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								 <input type="text" name="DLocation" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['DLocation']; ?>">
 							</div>
 						</div>
 
 						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								E-mail
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								 <input type="text" name="email" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['email']; ?>" disabled>
 							</div>
 						</div>

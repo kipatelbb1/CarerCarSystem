@@ -206,7 +206,7 @@ th, tr, td
 	display: block;
 }
 
-.form-label input[type="text"]
+.setting-form input[type="text"]
 {
 	width: 300px; 
 }
