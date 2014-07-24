@@ -1,6 +1,8 @@
 Validation ranges and settings.  
 Session error messages
-4. Emails
+Emails
+Email Managers at the same time. 
+admin work to see who posted a request when
 
 
 Add Range Limits: 
