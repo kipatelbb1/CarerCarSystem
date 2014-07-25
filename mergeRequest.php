@@ -1,4 +1,9 @@
 <?php  
+	if(!isset($_SESSION)) 
+	{ 
+	    session_start(); 
+	} 
+
 
 	//ADD REQUEST LINE TO REQUEST 
 	include 'connection.php';
@@ -28,7 +33,16 @@
 		$Duration = $_COOKIE['duration']; 
 		$Drop =  $_COOKIE['DLocation']; 
 		$Veh = $_COOKIE['veh_type']; 
-		$add_Comments = $_COOKIE['add']; 
+
+		if($_COOKIE['add'])
+		{
+			$add_Comments = $_COOKIE['add'];
+		}
+		else
+		{
+			$add_Comments = ""; 
+		}
+	 
 		
 		$CCenter = "313000"; 
 		$GLCode = "650003"; 

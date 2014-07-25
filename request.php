@@ -1,9 +1,17 @@
-<?php 	session_start(); 
-		if(!(isset($_SESSION['id'])))
-		{
-			header("Location: index.php"); /* Redirect browser */
-			exit();
-		}
+<?php 	
+
+
+
+	if(!isset($_SESSION)) 
+	{ 
+	   session_start(); 
+	} 
+
+	if(!(isset($_SESSION['id'])))
+	{
+		header("Location: index.php"); /* Redirect browser */
+		exit();
+	}
 
 
 ?>
