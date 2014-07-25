@@ -76,7 +76,7 @@ function showValError(message)
 
 
 	var currentText = error.innerHTML; 
-	error.innerHTML(currentText + "<br/>" + message); 
+	error.innerHTML = currentText + "<br/><li>" + message + "</li >"; 
 	
 
 
