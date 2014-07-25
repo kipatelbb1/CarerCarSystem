@@ -57,7 +57,7 @@
 			<div class="col-xs-12">
 				<ul class="nav nav-tabs" role="tablist">
 				  <li><a href="home.php">Home</a></li>
-				  <li class="active"><a href="request.php">My Requests</a></li>
+				  <li class="active"><a href="#">My Requests</a></li>
 				  <li><a href="settings.php">Settings</a></li>
 				</ul>
 			</div>

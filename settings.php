@@ -58,7 +58,7 @@ if(!(isset($_SESSION['id'])))
 				<ul class="nav nav-tabs" role="tablist">
 				  <li><a href="home.php">Home</a></li>
 				  <li><a href="request.php">My Requests</a></li>
-				  <li class="active"><a href="settings.php">Settings</a></li>
+				  <li class="active"><a href="#">Settings</a></li>
 				</ul>
 			</div>
 
