@@ -1,5 +1,4 @@
 <?php 
-	error_reporting(E_ERROR | E_PARSE);
 	session_start();
 	
 	if(!(isset($_SESSION['id'])))
@@ -30,7 +29,7 @@
 	<!-- COMPAT -->
 	<!--[if lt IE 9]>
         <script src="scripts/compat/html5shiv.min.js"></script>
-        <script src="scripts/compat/respond.js"></script>
+        <script src="scripts/compat/respond.min.js"></script>
 	<![endif]-->
 
 	<!-- END COMPAT -->
