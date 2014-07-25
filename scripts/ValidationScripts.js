@@ -1,52 +1,49 @@
 
 function checkInputs()
 {
-
-	var checks_passed = 0; 
-
+ 
 	var dateText = document.getElementById('datepicker'); 
-	if(dateText.value == '')
+	if(dateText.value === '')
 	{
 		dateText.style.border = "1px solid red"; 
 		dateText.style.backgroundColor = "yellow"; 
+		showValError(); 
 		return false; 
 	}
-	else
-	{
-		checks_passed++; 
-	}
+	
 
-
-	var PLoc = document.getElementById('PTime'); 
-	if(PLoc.value == '')
+	var PLoc = document.getElementById('PLoc'); 
+	if(PLoc.value === '')
 	{
 		PLoc.style.border = "1px solid red"; 
-		PLoc.style.backgroundColor = "yellow"; 
+		PLoc.style.backgroundColor = "yellow";
+		showValError();   
 		return false; 
 	}
-	else
-	{
-		checks_passed++; 
-	}
-
+	
 
 
 	var num = document.getElementById('num'); 
-	if(dateText.value == '')
+	if(num.value === '')
 	{
 		num.style.border = "1px solid red"; 
 		num.style.backgroundColor = "yellow"; 
+		showValError(); 
 		return false; 
 	}
-	else
-	{
-		checks_passed++; 
-	}
 
+	return true; 
 
 	//NEED TO ADD RANGE LIMITS. 
 
 
 
 
+}
+
+
+function showValError()
+{
+	var error = document.getElementById('request_validation'); 
+	error.style.display = "block"; 
 }

@@ -230,6 +230,13 @@
 							</div>
 						</div>
 
+						<div class="row">
+							<div class="col-xs-12  form-label" id="request_validation">
+								<div class="alert alert-danger" role="alert">Ensure you enter all details!</div>
+							</div>
+						</div>
+
+
 					</form>
 					</div>
 

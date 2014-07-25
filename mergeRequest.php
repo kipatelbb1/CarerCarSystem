@@ -1,6 +1,4 @@
-<?php 
-
-	session_start(); 
+<?php  
 
 	//ADD REQUEST LINE TO REQUEST 
 	include 'connection.php';

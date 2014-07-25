@@ -211,3 +211,11 @@ th, tr, td
 {
 	width: 300px; 
 }
+
+#request_validation
+{
+	display: none;
+	color: red;
+	text-align: center;
+
+}

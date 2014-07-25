@@ -3,13 +3,14 @@
 	if(isset($_POST['name']))
 	{
 		include 'connection.php';
-		$query = "SELECT * FROM tester";
-
+		
 		$username = $_POST['name']; 
 		$password = $_POST['password']; 
 
+
 		//Enrypt the password. 
 		$password = md5($password . "BLACKBERRY"); 
+		$query = "SELECT * FROM tester WHERE username='$username' AND Password='$password' ";
 
 		$set = mysqli_query($con, $query); 
 
@@ -18,7 +19,6 @@
 			if($row['username'] == $username && $row['Password'] == $password)
 			{
 				session_start(); 
-				echo "Passed"; 
 
 				$_SESSION['id'] = $row['testerID']; 
 				$_SESSION['name'] = $row['username']; 
@@ -32,15 +32,15 @@
 
 				
 				header('Location: home.php');
+				exit(); 
 			}
-			else
-			{
-				echo '<div class="alert alert-danger" role="alert">';
-  				echo '<a href="#" class="alert-link">Error - Check your Username and Password. </a>';
-				echo '</div>';
-				include 'index.php'; 
-			}
+			
 		}
+
+		echo '<div class="alert alert-danger" role="alert">';
+  		echo '<a href="#" class="alert-link">Error - Check your Username and Password. </a>';
+		echo '</div>';
+		include 'index.php'; 
 
 
 	}
