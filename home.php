@@ -270,7 +270,7 @@
 											WHERE rl.requestID = r.requestID 
 											AND rl.testerID = t.testerID 
 											ORDER BY r.date_request DESC
-											LIMIT 1,5; ";
+											LIMIT 0,5; ";
 
 							$set = mysqli_query($con,$getRecent)or die(mysqli_error($con)); 
 
