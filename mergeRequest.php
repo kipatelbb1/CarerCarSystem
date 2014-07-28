@@ -34,7 +34,7 @@
 		$Drop =  $_COOKIE['DLocation']; 
 		$Veh = $_COOKIE['veh_type']; 
 
-		if($_COOKIE['add'])
+		if(isset($_COOKIE['add']))
 		{
 			$add_Comments = $_COOKIE['add'];
 		}
