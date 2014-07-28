@@ -73,6 +73,19 @@
 		</div>
 		<!-- END NAV -->
 
+		<!-- SEARCH REQUESTS -->
+		<div class="row search_request">
+			<form method="GET" action="view_request.php">
+				<div class="col-xs-12">			
+					<input type="text" name="reqid" placeholder="Enter a Request ID here">
+					<input type="submit" value="Search!">
+				</div>
+
+			</form>
+		</div>
+		<!-- END SEARCH REQUESTS -->
+
+
 		<?php 
 				include 'connection.php'; 
 						$testerID = $_SESSION['id']; 

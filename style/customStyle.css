@@ -226,3 +226,11 @@ th, tr, td
 	display: inline; 
 	color: red;
 }
+
+.search_request
+{
+	margin-top: 10px;
+	font-size: 20px;
+	text-align: center; 
+
+}
