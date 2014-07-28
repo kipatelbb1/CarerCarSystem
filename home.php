@@ -87,7 +87,7 @@
 					<form action="determineSimilar.php" method="POST" id="requestForm" onsubmit="return checkInputs();">
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label">
-								Date: 
+								Date: <div class="required_input">*</div>
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label">
@@ -98,7 +98,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label">
-								Pick Up Time:
+								Pick Up Time: <div class="required_input">*</div>
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label">
@@ -118,7 +118,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label">
-								Pick Up Location:
+								Pick Up Location: <div class="required_input">*</div>
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label">
@@ -178,7 +178,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label">
-								Contact Number:
+								Contact Number: <div class="required_input">*</div>
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label">

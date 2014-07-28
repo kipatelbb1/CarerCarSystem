@@ -1,6 +1,9 @@
 
 function checkInputs()
 {
+	//Clear all previous Errors. 
+	var error = document.getElementById('request_validation'); 
+	error.innerHTML = ""; 
  
 	var dateText = document.getElementById('datepicker'); 
 	if(dateText.value === '')
