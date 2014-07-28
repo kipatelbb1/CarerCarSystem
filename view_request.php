@@ -68,8 +68,8 @@
 
 			<div class="col-xs-12">
 				<ul class="nav nav-tabs" role="tablist">
-				  <li class="active"><a href="index.php">Home</a></li>
-				  <li><a href="request.php">My Requests</a></li>
+				  <li><a href="home.php">Home</a></li>
+				  <li class="active" ><a href="request.php">My Requests</a></li>
 				  <li><a href="settings.php">Settings</a></li>
 				  <h4 class="welcome">Welcome <?php echo $_SESSION['fName'] . " " . $_SESSION['lName'] ?></h4>
 				</ul>
@@ -78,6 +78,19 @@
 
 		</div>
 		<!-- END NAV -->
+
+
+
+		<?php 
+			include 'connection.php'; 
+			$requestID = $_GET['reqid']; 
+			$query = "SELECT * FROM request WHERE requestID =" . $requestID;
+
+			$set = mysqli_query($con, $query); 
+			$row = mysqli_fetch_array($set)
+
+
+		?>
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-5 request_title">
@@ -91,8 +104,8 @@
 				Request ID 
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" value="<?php echo $_POST['reqid']; ?>" name="loc" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+				<input type="text" value="<?php echo $row['requestID'] ?>" name="loc" disabled>
 			</div>
 		</div>
 
@@ -101,8 +114,8 @@
 				Date
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" value="" name="DLocation" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+				<input type="text" value="<?php echo $row['date_request'] ?>" name="DLocation" disabled>
 			</div>
 		</div>
 
@@ -111,8 +124,8 @@
 				Pick Up Time
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" name="duration" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+				<input type="text" name="duration" value="<?php echo $row['PTime'] ?>" disabled>
 			</div>
 		</div>
 
@@ -121,8 +134,8 @@
 				Pick Up Location
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" name="duration" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+				<input type="text" name="PLoc" value="<?php echo $row['PLoc'] ?>" disabled>
 			</div>
 		</div>
 
@@ -132,8 +145,8 @@
 				Drop Off Location
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" name="duration" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+				<input type="text" name="DLoc" value="<?php echo $row['DLocation'] ?>" disabled>
 			</div>
 		</div>
 
@@ -142,8 +155,8 @@
 				Vehicle Type
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" name="duration" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+				<input type="text" name="veh" value="<?php echo $row['Veh_Type'] ?>" disabled>
 			</div>
 		</div>
 
@@ -152,8 +165,8 @@
 				Cost Center
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" name="duration" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+				<input type="text" name="cc" value="<?php echo $row['Cost_Center'] ?>" disabled>
 			</div>
 		</div>
 
@@ -162,8 +175,8 @@
 				GL Code
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" name="duration" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form ">
+				<input type="text" name="gl" value="<?php echo $row['GL_Code'] ?>" disabled>
 			</div>
 		</div>
 
@@ -172,8 +185,39 @@
 				Comments
 			</div>
 
-			<div class="col-xs-12 col-sm-6 form-label">
-				<input type="text" name="duration" disabled>
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+				<input type="text" name="add" value="<?php echo $row['add_Comments'] ?>" disabled>
+			</div>
+		</div>
+
+		<div class="row">
+			
+
+			<div class="col-xs-12 col-sm-6 form-label setting-form">
+
+				<div class="request_title">Testers</div>
+
+				<?php 
+					$query = "SELECT t.fName, t.lName 
+					FROM tester t, request r, requestline rl 
+					WHERE rl.testerID = t.testerID 
+					AND rl.requestID = r.requestID
+					AND rl.requestID =" . $requestID . "
+					GROUP BY t.fName, t.lName;"; 
+
+					$testerSet = mysqli_query($con, $query); 
+		
+					while($row = mysqli_fetch_array($testerSet))
+					{
+						echo $row['fName'] . " " . $row['lName']. "<br/>"; 
+					}
+				?>
+
+
+
+				
+
+				
 			</div>
 		</div>
 

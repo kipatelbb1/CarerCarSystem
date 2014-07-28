@@ -459,6 +459,13 @@
 		</div>
 		<!-- END FOOTER -->
 
+		<form method="GET" action="view_request.php">
+			<input type="text" name="reqid" />
+
+			<input type="submit" value="Submit">
+
+		</form>
+
 
 
 	</div><!--END CONTAINER -->
