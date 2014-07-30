@@ -1,13 +1,9 @@
-
 <?php 
-
 
 	if(!isset($_SESSION)) 
 	{ 
 	    session_start(); 
 	} 
-
-
 
 	if(!(isset($_SESSION['id'])))
 	{
@@ -46,6 +42,25 @@
 	
 </head>
 <body>
+		<?php 
+			include 'connection.php'; 
+			$requestID = $_GET['reqid']; 
+			$query = "SELECT * FROM request WHERE requestID =" . $requestID;
+
+			$set = mysqli_query($con, $query); 
+			$row = mysqli_fetch_array($set); 
+
+			if(mysqli_num_rows($set)<=0)
+			{
+				echo '<div class="alert alert-danger" role="alert">';
+  				echo '<a href="#" class="alert-link">Error - Request not found. </a>';
+				echo '</div>';
+				include 'request.php'; 
+				exit(); 
+			}
+
+
+		?>
 
 
 	<div class="container">
@@ -81,16 +96,7 @@
 
 
 
-		<?php 
-			include 'connection.php'; 
-			$requestID = $_GET['reqid']; 
-			$query = "SELECT * FROM request WHERE requestID =" . $requestID;
-
-			$set = mysqli_query($con, $query); 
-			$row = mysqli_fetch_array($set)
-
-
-		?>
+	
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-5 request_title">
