@@ -18,10 +18,10 @@
 		{ 
 			if($row['username'] == $username && $row['Password'] == $password)
 			{
-					if(!isset($_SESSION)) 
-					{ 
-					    session_start(); 
-					} 
+				if(!isset($_SESSION)) 
+				{ 
+					 session_start(); 
+				} 
 
 
 				$_SESSION['id'] = $row['testerID']; 
