@@ -78,7 +78,7 @@
 				
 
 				<div class="panel-body">
-					<form action="updateTesterInfo.php" method="POST">
+					<form action="updateTesterInfo.php" method="POST" onsubmit="return checkSettings();">
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								First Name
@@ -105,7 +105,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text" name="num" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['MobileNo']; ?>">
+								 <input type="text" name="num" id="num" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['MobileNo']; ?>">
 							</div>
 						</div>
 
@@ -115,7 +115,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text" name="PLoc" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['PLocation']; ?>">
+								 <input type="text" id="PLoc" name="PLoc" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['PLocation']; ?>">
 							</div>
 						</div>
 
@@ -125,7 +125,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text" name="DLocation" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['DLocation']; ?>">
+								 <input type="text"  id="DLoc" name="DLocation" value="<?php include 'connection.php'; $query = 'SELECT * FROM tester WHERE testerID =' . $_SESSION['id']; $set = mysqli_query($con, $query); $tester = mysqli_fetch_array($set); echo $tester['DLocation']; ?>">
 							</div>
 						</div>
 
@@ -152,6 +152,15 @@
 					</div>
 
 			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-xs-12">
+					<div class="alert alert-danger" role="alert" id="settings-error">Ensure you enter all details!</div>
+
+			</div>
+
 		</div>
 
 
@@ -187,6 +196,7 @@
 	<script type="text/javascript" src="scripts/jquery.js"></script>
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src="scripts/customscript.js"></script>	
+	<script type="text/javascript" src="scripts/ValidationScripts.js"></script>
 	<!-- END SCRIPTS -->
 </body>
 </html>

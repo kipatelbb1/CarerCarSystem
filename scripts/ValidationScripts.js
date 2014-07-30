@@ -10,7 +10,7 @@ function checkInputs()
 	{
 		dateText.style.border = "1px solid red"; 
 		dateText.style.backgroundColor = "yellow"; 
-		showValError("Enter a date"); 
+		showValError('request_validation',"Enter a date"); 
 		return false; 
 	}
 	else
@@ -25,7 +25,7 @@ function checkInputs()
 	{
 		PLoc.style.border = "1px solid red"; 
 		PLoc.style.backgroundColor = "yellow";
-		showValError("Enter a location under 100 characters");   
+		showValError('request_validation',"Enter a location under 100 characters");   
 		return false; 
 	}
 
@@ -34,7 +34,7 @@ function checkInputs()
 	{
 		DLoc.style.border = "1px solid red"; 
 		DLoc.style.backgroundColor = "yellow";
-		showValError("Drop off location must be less than 100 characters.");   
+		showValError('request_validation',"Drop off location must be less than 100 characters.");   
 		return false; 
 	}
 	
@@ -45,7 +45,7 @@ function checkInputs()
 	{
 		num.style.border = "1px solid red"; 
 		num.style.backgroundColor = "yellow"; 
-		showValError("Contact number must be 11 digits"); 
+		showValError('request_validation',"Contact number must be 11 digits"); 
 		return false; 
 	}
 
@@ -55,7 +55,7 @@ function checkInputs()
 	{
 		add.style.border = "1px solid red"; 
 		add.style.backgroundColor = "yellow";
-		showValError("Comments cannot be more than 500 characters");   
+		showValError('request_validation',"Comments cannot be more than 500 characters");   
 		return false; 
 	}
 
@@ -72,9 +72,68 @@ function checkInputs()
 }
 
 
-function showValError(message)
+function showValError(id, message)
 {
-	var error = document.getElementById('request_validation'); 
+	var error = document.getElementById(id); 
+	error.style.display = "block"; 
+
+
+	var currentText = error.innerHTML; 
+	error.innerHTML = currentText + "<br/><li>" + message + "</li >"; 
+	
+
+
+}
+
+
+//SETTINGS VALIDATION 
+
+function checkSettings()
+{
+
+	var error = document.getElementById('settings-error'); 
+	error.innerHTML = ""; 
+
+	var num = document.getElementById('num'); 
+	if(num.value.length !=11)
+	{
+		num.style.border = "1px solid red"; 
+		num.style.backgroundColor = "yellow";
+		//showValError("Comments cannot be more than 500 characters");   
+		showValErrorSettings("Number must be 11 digits"); 
+		return false; 
+	}
+
+
+
+	var PLoc = document.getElementById('PLoc'); 
+	if(PLoc.value.length >=500)
+	{
+		PLoc.style.border = "1px solid red"; 
+		PLoc.style.backgroundColor = "yellow";
+		//showValError("Comments cannot be more than 500 characters");   
+		showValErrorSettings("Pick Up Location must be under 500 characters"); 
+		return false; 
+	}
+
+	var DLoc = document.getElementById('DLoc'); 
+	if(DLoc.value.length >=500)
+	{
+		DLoc.style.border = "1px solid red"; 
+		DLoc.style.backgroundColor = "yellow";
+		showValErrorSettings("Drop Off Location must be under 500 characters");   
+		return false; 
+	}
+
+	return true; 
+
+}
+
+
+
+function showValErrorSettings(message)
+{
+	var error = document.getElementById('settings-error'); 
 	error.style.display = "block"; 
 
 
