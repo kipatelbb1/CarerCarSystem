@@ -1,13 +1,26 @@
 Feedback :
 
+Gurinda: 
 Invoice from carey 
-
 Total cost for the week 
 
-Gurinda: 
 Calender Update - Rather than email confirm - calender confirm 
 Weekly Cost
 
 Eddie:
 Cancellation Features 
 Admin viewer to see costs. 
+
+Fabio: 
+up to 6pm to book at time. 
+Cost Center Dynamics 
+	- Database of all the cost centers referenced with the locations. (DB)
+View Next Week and Previous Week Bookings. 
+
+Dalvir: 
+Add 30 min interval for bookings. 
+
+
+Internal: 
+Add initial registration 
+
