@@ -2,7 +2,7 @@
 
 	$host = "localhost"; 
 	$username="root"; 
-	$password="ftstesting"; 
+	$password=""; 
 	$database="carey_car"; 
 
 	$con = mysqli_connect($host, $username, $password, $database) or die("Could Not Connect"); 
