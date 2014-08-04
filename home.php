@@ -111,6 +111,8 @@
 									<option value="1400">14:00</option>
 									<option value="1500">15:00</option>
 									<option value="1600">16:00</option>
+									<option value="1600">17:00</option>
+									<option value="1600">18:00</option>
 								</select>
 
 							</div>
@@ -146,21 +148,21 @@
 
 								 <select name="duration">
 									<option value="30">30 Mins</option>
-									<option value="1">1 Hour</option>
-									<option value="1.5">1.5 Hour</option>
+									<option value="1">1 Hours</option>
+									<option value="1.5">1.5 Hours</option>
 									<option value="2">2 Hour</option>
 									<option value="2.5">2.5 Hour</option>
-									<option value="3">3 Hour</option>
-									<option value="3.5">3.5 Hour</option>
-									<option value="4">4 Hour</option>
-									<option value="4.5">4.5 Hour</option>
-									<option value="5">5 Hour</option>
-									<option value="5.5">5.5 Hour</option>
-									<option value="6">6 Hour</option>
-									<option value="6.5">6.5 Hour</option>
-									<option value="7">7 Hour</option>
-									<option value="7.5">7.5 Hour</option>
-									<option value="8">8 Hour</option>
+									<option value="3">3 Hours</option>
+									<option value="3.5">3.5 Hours</option>
+									<option value="4">4 Hours</option>
+									<option value="4.5">4.5 Hours</option>
+									<option value="5">5 Hours</option>
+									<option value="5.5">5.5 Hours</option>
+									<option value="6">6 Hours</option>
+									<option value="6.5">6.5 Hours</option>
+									<option value="7">7 Hours</option>
+									<option value="7.5">7.5 Hours</option>
+									<option value="8">8 Hours</option>
 								</select>
 							</div>
 						</div>
@@ -427,6 +429,24 @@
 					<td id="Wed1600"><?php compareData("Wed1600",$Dates,$Locations, $Names); ?></td>
 					<td id="Thu1600"><?php compareData("Thu1600",$Dates,$Locations, $Names); ?></td>
 					<td id="Fri1600"><?php compareData("Fri1600",$Dates,$Locations, $Names); ?></td>
+				</tr>
+
+				<tr>
+					<th>17:00</th>
+					<td id="Mon1700"><?php compareData("Mon1700",$Dates,$Locations, $Names); ?></td>
+					<td id="Tue1700"><?php compareData("Tue1700",$Dates,$Locations, $Names); ?></td>
+					<td id="Wed1700"><?php compareData("Wed1700",$Dates,$Locations, $Names); ?></td>
+					<td id="Thu1700"><?php compareData("Thu1700",$Dates,$Locations, $Names); ?></td>
+					<td id="Fri1700"><?php compareData("Fri1700",$Dates,$Locations, $Names); ?></td>
+				</tr>
+
+				<tr>
+					<th>18:00</th>
+					<td id="Mon1800"><?php compareData("Mon1800",$Dates,$Locations, $Names); ?></td>
+					<td id="Tue1800"><?php compareData("Tue1800",$Dates,$Locations, $Names); ?></td>
+					<td id="Wed1800"><?php compareData("Wed1800",$Dates,$Locations, $Names); ?></td>
+					<td id="Thu1800"><?php compareData("Thu1800",$Dates,$Locations, $Names); ?></td>
+					<td id="Fri1800"><?php compareData("Fri1800",$Dates,$Locations, $Names); ?></td>
 				</tr>
 
 			</table>
