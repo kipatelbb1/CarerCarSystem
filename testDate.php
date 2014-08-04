@@ -1,8 +1,10 @@
 <?php
 
-	$Dates=getData()[0];
-	$Locations=getData()[1]; 
-	$Names = getData()[2]; 
+	$data = getData(); 
+
+	$Dates=$data[0];
+	$Locations=$data[1]; 
+	$Names = $data[2]; 
 	
 	
 	
