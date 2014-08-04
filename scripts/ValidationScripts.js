@@ -95,7 +95,7 @@ function checkSettings()
 	error.innerHTML = ""; 
 
 	var num = document.getElementById('num'); 
-	if(num.value.length !=11)
+	if(num.value.length!=11)
 	{
 		num.style.border = "1px solid red"; 
 		num.style.backgroundColor = "yellow";

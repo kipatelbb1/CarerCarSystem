@@ -38,5 +38,5 @@ View Next Week and Previous Week Bookings
 Email Capabilities. 
 
 --Hard Implementations-- 
-Add 30 min interval for bookings and regression testing 
+Add 30 min interval for bookings and regression testing [DONE]
 
