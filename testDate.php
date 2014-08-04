@@ -39,6 +39,7 @@
 				$time = substr($time, -5); 
 				 
 				$time = substr($time,0,2) . substr($time,3,5);
+
 				
 				
 				$datetimecode = $dateToCheck . $time; 
