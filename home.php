@@ -105,7 +105,7 @@
 								
 								<select name="pick_up" id="pick_up">
 									<option value="1000">10:00</option>
-									<option value="1030">10:30</option>
+									<!-- <option value="1030">10:30</option> -->
 									<option value="1100">11:00</option>
 									<option value="1200">12:00</option>
 									<option value="1300">13:00</option>
@@ -377,14 +377,14 @@
 					<td id="Fri1000"><?php compareData("Fri1000",$Dates,$Locations, $Names); ?></td>
 				</tr>
 
-				<tr>
+				<!-- <tr>
 					<th>10:30</th>
 					<td id="Mon1030"><?php compareData("Mon1030",$Dates,$Locations, $Names); ?></td>
 					<td id="Tue1030"><?php compareData("Tue1030",$Dates,$Locations, $Names); ?></td>
 					<td id="Wed1030"><?php compareData("Wed1030",$Dates,$Locations, $Names); ?></td>
 					<td id="Thu1030"><?php compareData("Thu1030",$Dates,$Locations, $Names); ?></td>
 					<td id="Fri1030"><?php compareData("Fri1030",$Dates,$Locations, $Names); ?></td>
-				</tr>
+				</tr> -->
 
 
 				<tr>
