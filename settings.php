@@ -81,7 +81,7 @@
 					<form action="updateTesterInfo.php" method="POST" onsubmit="return checkSettings();">
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								First Name
+								First Name<div class="required_input">*</div>
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
@@ -91,7 +91,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Last Name
+								Last Name<div class="required_input">*</div>
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
@@ -101,7 +101,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Contact Number
+								Contact Number<div class="required_input">*</div>
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
@@ -131,7 +131,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								E-mail
+								E-mail<div class="required_input">*</div>
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
