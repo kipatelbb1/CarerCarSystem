@@ -46,18 +46,9 @@
 		<?php 
 			//Create a connection to the database. 
 			include 'connection.php'; 
-			//GET method to get the requestID from previous page. (Can also be changed in address bar)
-			$requestID = $_GET['reqid']; 
-			//Create a query where the request ID is the GET request ID. 
-			$query = "SELECT * FROM request WHERE requestID =" . $requestID;
-
-			//Execute the query. 
-			$set = mysqli_query($con, $query);
-			//Get the first row.  
-			$row = mysqli_fetch_array($set); 
-
-			//If the number of rows is less than or equal to 0 then show a error describing the ID as not found in the database. 
-			if(mysqli_num_rows($set)<=0)
+			
+			//If no request ID has been set (BLANK) then show error. 
+			if(!isset($_GET['reqid']))
 			{
 				echo '<div class="alert alert-danger" role="alert">';
   				echo '<a href="#" class="alert-link">Error - Request not found. </a>';
@@ -65,7 +56,47 @@
 				include 'request.php'; 
 				exit(); 
 			}
+			else
+			{
+				//GET method to get the requestID from previous page. (Can also be changed in address bar)
+				$requestID = $_GET['reqid']; 
+			}
 
+			//Create a query where the request ID is the GET request ID. 
+			$query = "SELECT * FROM request WHERE requestID =" . $requestID;
+
+			//Execute the query. 
+			$set = mysqli_query($con, $query);
+
+			//If set returns nothing then
+			if($set != false)
+			{
+				//Get the first row.  
+				$row = mysqli_fetch_array($set);
+
+				//If the number of rows is less than or equal to 0 then show a error describing the ID as not found in the database. 
+				if(mysqli_num_rows($set)<=0)
+				{
+					echo '<div class="alert alert-danger" role="alert">';
+	  				echo '<a href="#" class="alert-link">Error - Request not found. </a>';
+					echo '</div>';
+					include 'request.php'; 
+					exit(); 
+				}
+
+			}
+			else
+			{
+				//Show an error. 
+				echo '<div class="alert alert-danger" role="alert">';
+  				echo '<a href="#" class="alert-link">Error - Request not found. </a>';
+				echo '</div>';
+				include 'request.php'; 
+				exit(); 
+			}
+		 
+
+			
 
 		?>
 
@@ -221,6 +252,8 @@
 
 					//Execute Query. 
 					$testerSet = mysqli_query($con, $query); 
+
+
 		
 					//For each tester found.. 
 					while($row = mysqli_fetch_array($testerSet))
