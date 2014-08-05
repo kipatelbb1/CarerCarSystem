@@ -1,10 +1,11 @@
 <?php 
-
+	//If Session does not exist then start the session. 
 	if(!isset($_SESSION)) 
 	{ 
 	    session_start(); 
 	} 
 
+	//If the ID has not been set then redirect for user to log in. 
 	if(!(isset($_SESSION['id'])))
 	{
 		header("Location: index.php"); /* Redirect browser */
@@ -43,13 +44,19 @@
 </head>
 <body>
 		<?php 
+			//Create a connection to the database. 
 			include 'connection.php'; 
+			//GET method to get the requestID from previous page. (Can also be changed in address bar)
 			$requestID = $_GET['reqid']; 
+			//Create a query where the request ID is the GET request ID. 
 			$query = "SELECT * FROM request WHERE requestID =" . $requestID;
 
-			$set = mysqli_query($con, $query); 
+			//Execute the query. 
+			$set = mysqli_query($con, $query);
+			//Get the first row.  
 			$row = mysqli_fetch_array($set); 
 
+			//If the number of rows is less than or equal to 0 then show a error describing the ID as not found in the database. 
 			if(mysqli_num_rows($set)<=0)
 			{
 				echo '<div class="alert alert-danger" role="alert">';
@@ -204,6 +211,7 @@
 				<div class="request_title">Testers</div>
 
 				<?php 
+					//Create a query that gets the name of the testers that are associated with the GET request and all that are linked to that particular request. 
 					$query = "SELECT t.fName, t.lName 
 					FROM tester t, request r, requestline rl 
 					WHERE rl.testerID = t.testerID 
@@ -211,19 +219,16 @@
 					AND rl.requestID =" . $requestID . "
 					GROUP BY t.fName, t.lName;"; 
 
+					//Execute Query. 
 					$testerSet = mysqli_query($con, $query); 
 		
+					//For each tester found.. 
 					while($row = mysqli_fetch_array($testerSet))
 					{
+						//Print thier name. 
 						echo $row['fName'] . " " . $row['lName']. "<br/>"; 
 					}
 				?>
-
-
-
-				
-
-				
 			</div>
 		</div>
 
@@ -263,8 +268,6 @@
 	<script type="text/javascript" src="scripts/jquery.js"></script>
 	<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="scripts/customscript.js"></script>	
-
-	
 	<!-- END SCRIPTS -->
 </body>
 </html>

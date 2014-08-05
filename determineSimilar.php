@@ -44,7 +44,7 @@
 	//IF TIME HAS A 30 THEN DO ANOTHER QUERY 
 	if(substr($PTime, 2, strlen($PTime)) == "30")
 	{
-		//Get a request that has the exact same date and time as the posted. 
+		//Get a request that has the exact same date and time as the posted. (30 MIN VERSION)
 		$query = "SELECT * FROM request WHERE date_request='$Date' AND PTime='00:" . $tranTime . ":30'"; 
 	}
 	else
@@ -52,12 +52,6 @@
 		//Get a request that has the exact same date and time as the posted. 
 		$query = "SELECT * FROM request WHERE date_request='$Date' AND PTime='00:" . $tranTime . ":00'"; 
 	}
-
-
-
-
-
-	//END
 
 
 
@@ -86,6 +80,7 @@
 
 				echo "<div class='row";
 					echo "<div class='col-xs-12'>";
+						//POST to the mergeRequest Form to either merge or not. 
 						echo "<form method='POST' action='mergeRequest.php'>";
 							echo "<input type='submit' name='submit_val' class='merge-button' value='Yes'>";
 							echo "<input type='submit' name='submit_val' class='merge-button' value='No'>";
@@ -107,11 +102,12 @@
 		$query = "SELECT * FROM request WHERE date_request='$Date' AND PTime='00:" . $toBack . ":00'"; 
 		//Execute Query. 
 		$set = mysqli_query($con, $query); 
-		//
+		//Get the number of rows that match the query. 
 		$num_rows = mysqli_num_rows($set); 
-
+		//Get the request ID of the returned set. 
 		$requestID = mysqli_fetch_array($set)['requestID'];
 
+		//If a row matching the date and hour back time exists then ask for a merger or not. 
 		if($num_rows>=1)
 		{
 			//ASK IF THEY WANT TO MERGE THE REQUESTS. 
@@ -124,6 +120,7 @@
 				echo "<div class='row";
 					echo "<div class='col-xs-12'>";
 						echo "<form method='POST' action='mergeRequest.php'>";
+							//POST to the mergeRequest Form to either merge or not.
 							echo "<input type='submit' name='submit_val' class='merge-button' value='Yes'>";
 							echo "<input type='submit' name='submit_val' class='merge-button' value='No'>";
 							echo "<input type='hidden' name='requestID' value=" . $requestID . ">"; 
@@ -135,16 +132,22 @@
 		else
 		{
 
-			//FIND HOUR FORWARD
+			//Get the current hour. 
 			$toForward = $tranTime; 
+			//Forward hour by one. 
 			$toForward++; 
 
+			//Create query to determine if there is a date and time request with one hour forward. 
 			$query = "SELECT * FROM request WHERE date_request='$Date' AND PTime='00:" . $toForward . ":00'"; 
+			//Execute Query. 
 			$set = mysqli_query($con, $query); 
+			//Find if such a record exits. 
 			$num_rows = mysqli_num_rows($set); 
 
+			//Get the request ID of the retrieved request. 
 			$requestID = mysqli_fetch_array($set)['requestID'];
 
+			//If the record exists. 
 			if($num_rows>=1)
 			{
 				echo "<div class='row";
@@ -156,6 +159,7 @@
 				echo "<div class='row";
 					echo "<div class='col-xs-12'>";
 						echo "<form method='POST' action='mergeRequest.php'>";
+							//POST to the mergeRequest Form to either merge or not.
 							echo "<input type='submit' name='submit_val' class='merge-button' value='Yes'>";
 							echo "<input type='submit' name='submit_val' class='merge-button' value='No'>";
 							echo "<input type='hidden' name='requestID' value=" . $requestID . ">"; 
@@ -177,19 +181,5 @@
 
 
 	}
-
-	
-	
-	
-
-
-	
-
-
-
-
-
-
-
 
 ?>

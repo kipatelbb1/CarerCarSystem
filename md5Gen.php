@@ -1,5 +1,10 @@
 <?php 
 
+	/* 
+		TEST PAGE TO CHECK ENCRYPTION 
+		DELETE ONE COMPLETE. 
+	*/
+
 	echo "<form method='POST' action='md5Gen.php'>";
 
 		echo "<input type='password' name='pass' />";

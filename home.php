@@ -1,15 +1,16 @@
 <?php 
-
+	//If the session does not exist then start a new session. 
 	if(!isset($_SESSION)) 
 	{ 
 	    session_start(); 
 	} 
 
-	
+
+	//if the id has not been set from the logintester.php then they have not been authenticated and therefore need to log in. 
 	if(!(isset($_SESSION['id'])))
 	{
 		header("Location: index.php"); /* Redirect browser */
-		exit();
+		exit(); //Exit all processing. 
 	}
 
  ?>
@@ -273,8 +274,10 @@
 						<h3 class="req_title">Recently Requested</h3>
 
 						<?php 
+							//Create a connection with the database. 
 							include 'connection.php'; 
 
+							//Create a query to retrieve the recently requested. 
 							$getRecent = "SELECT t.fName, t.lName, r.date_request, r.PTime, r.PLoc
 											FROM request r, tester t, requestline rl
 											WHERE rl.requestID = r.requestID 
@@ -282,15 +285,15 @@
 											ORDER BY r.date_request DESC
 											LIMIT 0,5; ";
 
+							//Execute Query
 							$set = mysqli_query($con,$getRecent)or die(mysqli_error($con)); 
-
+							//Cycle through each record and display with class recents. 
 							while($row =  mysqli_fetch_array($set))
 							{
 								echo "<div class='recents'>"; 
 									echo $row['fName'] . " " . $row['lName'] . " booked a carey car for " . $row['date_request'] . " at " .  $row['PTime'] . " from ".  $row['PLoc']. "<br/>"; 
 								echo "</div>"; 
 							}
-
 						?>
 					</div>
 				</div>
@@ -324,9 +327,9 @@
 		<div class="row hidden-xs">
 			<div class="col-xs-12">
 				<?php 
-
+					//Print the current working week we are displaying results for. 
 					echo '<div class="weekoff">Schedule for:<br/> ' .date("d-m-Y",strtotime('monday this week')).' To '. date("d-m-Y",strtotime("sunday this week")) . '</div>';    
-
+					//Init the testDate.php to extract some data from the database and get it ready for the timetable. 
 					include 'testDate.php';
 				?>
 
@@ -354,9 +357,15 @@
 					<th class="top-header">Friday</th>
 				</tr>
 
-				
+				<!-- 
+					For each time period, a php script is called which determines if there is a request with the time stamp e.g. Mon0800. 
+					The Dates, Locations and Names variables were created when the testDate.php was included into the HTML file. 
+					The Retrieved date is then checked to see if it is within the current week and printed if so. 
 
-				
+					This operation is completed for every datetimestamp. 
+				-->
+
+			
 				<tr>
 					<th>08:00</th>
 					<td id="Mon0800"><?php compareData("Mon0800",$Dates,$Locations, $Names); ?></td>
