@@ -29,7 +29,7 @@ Commenting
 --Easy Implementations-- 
 up to 6pm to book at time [DONE]
 add initial registration 
-commenting 
+commenting [DONE]
 
 --Medium Implementaiton--
 Admin Viewer to see costs

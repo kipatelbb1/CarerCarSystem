@@ -121,6 +121,8 @@ th, tr, td
 {
 
 	display: block ; 
+	margin-right: auto; 
+	margin-left: auto; 
 }
 
 .welcome

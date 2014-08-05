@@ -31,6 +31,9 @@
 					 session_start(); 
 				} 
 
+				//Set cookie reg to expire long into the future. 
+				setcookie("reg", 1, time() + (10 * 365 * 24 * 60 * 60)); 
+
 				//STORE Session variables - Accessed throughout the system. 
 				$_SESSION['id'] = $row['testerID']; 
 				$_SESSION['name'] = $row['username']; 
