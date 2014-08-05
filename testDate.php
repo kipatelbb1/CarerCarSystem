@@ -9,6 +9,8 @@
 	$Locations=$data[1]; 
 	//The Names of the tester in the request. 
 	$Names = $data[2]; 
+
+	$requestIDs = $data[3]; 
 	
 	
 	//This function will get the request that are to be done for the current week. 
@@ -18,7 +20,7 @@
 		include 'connection.php'; 
 
 		//Create a query to get details of each request and the correspondong tester. 
-		$query = "SELECT t.fName, t.lName, r.PLoc, r.Duration, r.Veh_Type, r.date_request, r.PTime
+		$query = "SELECT t.fName, t.lName, r.PLoc, r.Duration, r.requestID,r.Veh_Type, r.date_request, r.PTime
 					FROM request r, tester t, requestline rl
 					WHERE t.testerID = rl.testerID 
 					AND r.requestID = rl.requestID; 
@@ -31,11 +33,13 @@
 		$array = []; 
 		$PLocale = []; 
 		$Names = []; 
+		$requestIDs = [];
 
 		//Initialise counters for each details. 
 		$counter = 0; 
 		$LocaleCounter = 0; 
-		$namesCounter = 0; 
+		$namesCounter = 0;
+		$requestIDCounter =0;  
 
 		//For each request. 
 		while($row = mysqli_fetch_array($set))
@@ -75,10 +79,13 @@
 				$Names[$namesCounter] = $row['fName'] . " " . $row['lName']; 
 				//Increment the index. 
 				$namesCounter++; 
+
+				$requestIDs[$requestIDCounter] = $row['requestID']; 
+				$requestIDCounter++; 
 			}
 		}
 		//Return an array of the arrays generated in this method. 
-		return [$array, $PLocale, $Names]; 
+		return [$array, $PLocale, $Names, $requestIDs]; 
 	}
 
 	//Funciton returns the day of the week of the passed parameter date. 
@@ -91,7 +98,7 @@
 	}
 
 	//Function is called directly by the HTML form in home.php
-	function compareData($dateToCheck, $Dates, $Locations,$Names)
+	function compareData($dateToCheck, $Dates, $Locations,$Names, $requestIDs)
 	{
 		//For each date
 		for($i=0;$i<sizeof($Dates);$i++)
@@ -99,11 +106,13 @@
 			//If the datestamp to check matches a date from the db. 
 			if($dateToCheck == $Dates[$i])
 			{
+				echo "<a href=view_request.php?reqid=" . $requestIDs[$i] . ">"; 
 				//Print the name of the tester associated with request
 				echo $Names[$i] . "<br/>"; 
 				//Print the location of the tester associated with request. 
 				echo $Locations[$i] . "<br/>"; 
 				//Printed straight into HTML. 
+				echo "</a>";
 
 				if($i+1 != sizeof($Dates))
 				{
