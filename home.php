@@ -75,6 +75,17 @@
 		</div>
 		<!-- END NAV -->
 
+		<?php 
+			include 'connection.php'; 
+			$query = "SELECT * FROM tester WHERE testerID =" . $_SESSION['id'];
+			$set = mysqli_query($con, $query); 
+
+			$row = mysqli_fetch_array($set); 
+
+
+
+		?>
+
 		<!-- FORM -->
 		<div class="row "> 
 			<div class="col-xs-12 col-sm-6 form_format">
@@ -133,7 +144,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" value="<?php echo $_SESSION['plocation'] ?>" name="loc" id="PLoc">
+								 <input type="text" value="<?php echo $row['PLocation'] ?>" name="loc" id="PLoc">
 							</div>
 						</div>
 
@@ -143,7 +154,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" value="<?php echo $_SESSION['DLocation'] ?>" name="DLocation" id="DLoc">
+								 <input type="text" value="<?php echo $row['DLocation'] ?>" name="DLocation" id="DLoc">
 							</div>
 						</div>
 
@@ -193,7 +204,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" value="<?php echo $_SESSION['num'] ?>" name="num" id="num">
+								 <input type="text" value="<?php echo $row['MobileNo'] ?>" name="num" id="num">
 							</div>
 						</div>
 
