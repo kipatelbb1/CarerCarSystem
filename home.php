@@ -294,6 +294,11 @@
 									echo $row['fName'] . " " . $row['lName'] . " booked a carey car for " . $row['date_request'] . " at " .  $row['PTime'] . " from ".  $row['PLoc']. "<br/>"; 
 								echo "</div>"; 
 							}
+
+							if(mysqli_num_rows($set)==0)
+							{
+								echo "No recent requests.."; 
+							}
 						?>
 					</div>
 				</div>
