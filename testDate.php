@@ -102,8 +102,13 @@
 				//Print the name of the tester associated with request
 				echo $Names[$i] . "<br/>"; 
 				//Print the location of the tester associated with request. 
-				echo $Locations[$i]; 
+				echo $Locations[$i] . "<br/>"; 
 				//Printed straight into HTML. 
+
+				if($i+1 != sizeof($Dates))
+				{
+					echo "<br/>"; 
+				}
 			}
 		}
 

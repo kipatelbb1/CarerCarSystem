@@ -60,10 +60,30 @@
 					<div class="panel-body">
 
 						<form method="POST" action="loginTester.php">
-							Username: <input type="text" name="name" /> <br/><br/>
-							Password: <input type="password" name="password" /> <br/><br/>
 
-							<input type="submit" Value="Submit">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label setting-form">
+									Username<div class="required_input">*</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 form-label setting-form">
+									<input type="text" name="name" />
+								</div>
+							</div>
+					
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label setting-form">
+									Password<div class="required_input">*</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 form-label setting-form">
+									<input type="password" name="password" />
+								</div>
+							</div>
+
+
+
+							<input type="submit" Value="Log In">
 
 						</form>
 					</div>
@@ -90,14 +110,14 @@
 
 						<form method="POST" action="register.php">
 							<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								First Name<div class="required_input">*</div>
-							</div>
+								<div class="col-xs-12 col-sm-6 form-label setting-form">
+									First Name<div class="required_input">*</div>
+								</div>
 
-							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text" name="fName"  >
+								<div class="col-xs-12 col-sm-6 form-label setting-form">
+									 <input type="text" name="fName"  >
+								</div>
 							</div>
-						</div>
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
@@ -148,7 +168,29 @@
 								 <input type="text" name="email" >
 							</div>
 						</div>
-							<input type="submit" Value="Submit">
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
+								Password<div class="required_input">*</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
+								 <input type="password"   name="password1" >
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
+								Confirm Password<div class="required_input">*</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
+								 <input type="password" name="password2" >
+							</div>
+						</div>
+
+
+						<input type="submit" Value="Register">
 
 						</form>
 					</div>
