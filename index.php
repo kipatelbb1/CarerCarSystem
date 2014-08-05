@@ -57,7 +57,7 @@
 						<h4>Login</h4>
 					</div>
 
-					<div class="panel-body">
+					<div class="panel-body" id="login">
 
 						<form method="POST" action="loginTester.php">
 
@@ -82,7 +82,6 @@
 							</div>
 
 
-
 							<input type="submit" Value="Log In">
 
 						</form>
@@ -99,14 +98,14 @@
 			</div>
 
 
-			<div class=" col-xs-12 col-sm-12">
+			<div class="col-xs-12 col-sm-12" >
 				<div class="panel panel-primary">
 
 					<div class="panel-heading">
 						<h4>Register</h4>
 					</div>
 
-					<div class="panel-body">
+					<div class="panel-body" id="reg">
 
 						<form method="POST" action="register.php">
 							<div class="row">
@@ -199,6 +198,14 @@
 
 		</div>
 
+		<!-- LLNE BREAK -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<hr class="line-break" />
+			</div>
+		</div>
+		<!-- END LINE BREAK -->
+
 		<!-- FOOTER -->
 		<div class="row">
 			<div class="col-xs-12 col-sm-3 footer">
@@ -226,6 +233,19 @@
 	<script type="text/javascript" src="scripts/jquery.js"></script>
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src="scripts/customscript.js"></script>	
+	<?php 
+		//If they have logged in before then hide the registration panel. 
+		if(isset($_COOKIE['reg']))
+		{
+			echo '<script type="text/javascript" src="scripts/hidereg.js"></script>'; 
+		}
+		else
+		{
+			//If they need to register then hide the log. 
+			echo '<script type="text/javascript" src="scripts/hideLog.js"></script>'; 
+		}
+	?>
+	
 	<!-- END SCRIPTS -->
 </body>
 </html>

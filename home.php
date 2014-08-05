@@ -618,6 +618,7 @@
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src="scripts/customscript.js"></script>	
 	<script type="text/javascript" src="scripts/ValidationScripts.js"></script>	
+	<script type="text/javascript" src="scripts/datepicker.js"></script>
 
 	
 	<!-- END SCRIPTS -->

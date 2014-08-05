@@ -25,7 +25,6 @@ $(document).ready(function()
 
 	}); 
 
-	$( "#datepicker" ).datepicker({dateFormat: 'dd/mm/yy'});
 
 	$('.recents').on('mouseover', function()
 	{
@@ -37,5 +36,7 @@ $(document).ready(function()
 	{
 		$(this).css('background-color', 'white'); 
 	}); 
+
+	
 
 }); 
