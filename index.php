@@ -107,7 +107,7 @@
 
 					<div class="panel-body" id="reg">
 
-						<form method="POST" action="register.php">
+						<form method="POST" action="register.php" onsubmit="return check();">
 							<div class="row">
 								<div class="col-xs-12 col-sm-6 form-label setting-form">
 									First Name<div class="required_input">*</div>
@@ -174,7 +174,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="password"   name="password1" >
+								 <input type="password"  id="password1" name="password1" >
 							</div>
 						</div>
 
@@ -184,14 +184,22 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="password" name="password2" >
+								 <input type="password" id="password2" name="password2" >
 							</div>
 						</div>
-
 
 						<input type="submit" Value="Register">
 
 						</form>
+
+
+						<div id="errReg">
+
+
+
+
+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -233,6 +241,7 @@
 	<script type="text/javascript" src="scripts/jquery.js"></script>
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src="scripts/customscript.js"></script>	
+	<script type="text/javascript" src="scripts/passwordVerify.js"></script>	
 	<?php 
 		//If they have logged in before then hide the registration panel. 
 		if(isset($_COOKIE['reg']))

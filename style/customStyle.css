@@ -245,3 +245,8 @@ th, tr, td
 	font-size: 15px; 
 
 }
+
+.errReg
+{
+	display: none; 
+}

@@ -289,7 +289,7 @@
 							include 'connection.php'; 
 
 							//Create a query to retrieve the recently requested. 
-							$getRecent = "SELECT t.fName, t.lName, r.date_request, r.PTime, r.PLoc
+							$getRecent = "SELECT t.fName, t.lName, r.requestID ,r.date_request, r.PTime, r.PLoc
 											FROM request r, tester t, requestline rl
 											WHERE rl.requestID = r.requestID 
 											AND rl.testerID = t.testerID 
@@ -302,7 +302,9 @@
 							while($row =  mysqli_fetch_array($set))
 							{
 								echo "<div class='recents'>"; 
+									echo "<a href=view_request.php?reqid=" . $row['requestID'] . ">"; 
 									echo $row['fName'] . " " . $row['lName'] . " booked a carey car for " . $row['date_request'] . " at " .  $row['PTime'] . " from ".  $row['PLoc']. "<br/>"; 
+									echo "</a>";
 								echo "</div>"; 
 							}
 
