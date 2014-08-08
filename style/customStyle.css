@@ -250,3 +250,12 @@ th, tr, td
 {
 	display: none; 
 }
+
+.join
+{
+	padding-right: 50px;
+	padding-left: 50px;  
+	font-size: 2em; 
+	
+	text-align: center; 
+}

@@ -263,7 +263,25 @@
 					}
 				?>
 			</div>
+
+
+
 		</div>
+
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<form method="POST" action="joinRequest.php">
+				<input type="hidden" name="requestID" value="<?php echo $_GET['reqid'] ?>">
+				<input type="hidden" name="testerID" value="<?php echo $_SESSION['id'] ?>">
+				<input type="submit" value="Join!" class="join">
+				</form>
+			</div>
+
+
+		</div>
+
+
 
 
 

@@ -13,7 +13,7 @@
 	$body.="Idrish Laxmidhar".PHP_EOL;
 	$body.="http://i-tech-life.blogspot.com".PHP_EOL;
 
-	$headers = "From: root@localhost.com"; 
+	$headers = "From: postmaster@localhost"; 
 
 	if (mail($to, $subject, $body, $headers)) {
 	echo("Message successfully sent!
