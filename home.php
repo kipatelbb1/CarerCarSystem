@@ -318,27 +318,7 @@
 			</div>
 			<!-- END STATUS -->
 
-			<!-- MOBILE UI TIMETABLE -->
-			<div class="col-xs-12 visible-xs">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						 <h3 class="panel-title">Already Booked</h3>
-					</div>
-
-					<!-- BOOKINGS FROM EACH PERSON -->
-
-					<div class="panel-body status_format">
-						<div class="mobile-booking">
-							Request ID: example <br/>
-							Pick Up Time: example <br/>
-							Pick Up Date: example <br/>
-							Duration: example <br/>
-							Vehicle Type: example <br/>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END MOBILE UI TIMETABLE -->
+		
 
 		</div>
 
@@ -586,6 +566,22 @@
 			</div>
 		</div>
 		<!-- END TABLE -->
+
+			<!-- MOBILE UI TIMETABLE -->
+			<div class="col-xs-12 visible-xs">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						 <h3 class="panel-title">This Week</h3>
+					</div>
+					<!-- BOOKINGS FROM EACH PERSON -->
+					<div class="panel-body status_format">
+						<div class="mobile-booking">
+							<?php include 'thisweek.php'; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MOBILE UI TIMETABLE -->
 
 		<!-- LLNE BREAK -->
 		<div class="row">
