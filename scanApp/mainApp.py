@@ -1,7 +1,7 @@
 from checkRequests import scanDB
 from sendmail import sendMail
 
-
+print "[+] Carer Car System Initialising.."
 #Initialise MYSQL database connection. 
 db = scanDB()
 
@@ -20,8 +20,10 @@ mail.setup('kiranpatel259@gmail.com', '')
 #Get the sender details. 
 sender = mail.getSender()
 
-#Create list of people to send email too. 
-to = ['kiran_patel94@hotmail.com', '1202117@my.brunel.ac.uk']
+#Create list of people to send email too.
+
+##GET ALL EMAILS FOR TESTERS AND CAREYS EMAIL AND FTS MANAGEMENT 
+to = ['kiran_patel94@hotmail.com']
 
 #For each record.. 
 for row in rows:
@@ -29,5 +31,6 @@ for row in rows:
 	mail.send(sender, to, str(msg))
 
 
+print "[+] Carey Car System closing.."
 mail.close()
 raw_input() 

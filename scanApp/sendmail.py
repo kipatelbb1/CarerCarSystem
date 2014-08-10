@@ -9,20 +9,23 @@ class sendMail:
 	gmail_sender = None
 
 	def __init__(self):
-		#Define where to connect with what port. 
+		#Define where to connect with what port.
+		print "[+] Connecting to SMTP Server" 
 		self.server = smtplib.SMTP('smtp.gmail.com', 587)
 		self.server.ehlo()
 		self.server.starttls()
 		self.server.ehlo
 
 	def setup(self,gmail_sender, gmail_password):
+		print "[+] Logging into SMTP Server"
 		#Login to the gmail server. 
 		self.server.login(gmail_sender, gmail_password)
-		#Return the 
+		#Set the class variable. 
 		self.gmail_sender =  gmail_sender
 
 
 	def createBody(self, row, gmail_sender, to):
+		print "[+] Creating HTML Email"
 		msg = MIMEMultipart('alternative')
 		msg['Subject'] = "Carey Car Request"
 		msg['From'] = gmail_sender
@@ -56,16 +59,25 @@ class sendMail:
 		part1 = MIMEText(text, 'plain')
 		part2 = MIMEText(html, 'html')
 
+		#Attach to the message. 
 		msg.attach(part1)
 		msg.attach(part2)
+		#Return message. 
 		return msg
 
 
 	def send(self, gmail_sender, to, msg):
-		self.server.sendmail(gmail_sender, to, str(msg))
-		print "[+] MESSAGE SENT TO " + str(to)
+		print "[+] Sending email.."
+		try:
+			#Send the mail through the server. 
+			self.server.sendmail(gmail_sender, to, str(msg))
+			#Print to console message has been sent. 
+			print "[+] MESSAGE SENT TO " + str(to)
+		except:
+			print "[+] MESSAGE WAS NOT SENT. RESTART SERVER"
 
 	def close(self):
+		#Close connection with server. 
 		self.server.quit()
 
 	def getSender(self):

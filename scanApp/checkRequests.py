@@ -7,18 +7,25 @@ class scanDB:
 	def __init__(self):
 		pass
 
+	#Method connects to the database. 
 	def connect(self, hostVal, userVal, passwdVal, dbVal, portVal="3306"):
+		print "[+] Connecting to database.."
 		con = MySQLdb.connect(host=hostVal,
 							user=userVal,
 							passwd = passwdVal, 
 							db= dbVal, 
 							port=portVal)
 
+		print "[+] Connected!"
 		return con 
 
 	def executeQuery(self, con, query): 
+		print "[+] Retrieving data.."
+		#Get Cursor. 
 		cur = con.cursor()
+		#Execute the passed query. 
 		cur.execute(query)
+		#Create empty list which will be the 2D array. 
 		rows = []
 
 		for row in cur.fetchall():
@@ -28,7 +35,9 @@ class scanDB:
 			#Format correctly. 
 			requestID = requestID[:2]
 
+			#Get the date
 			date_request = row[1]
+			#Convert the date to the following format. 
 			date_request = date_request.strftime('%d-%m-%Y')
 
 			PTime = row[2]
@@ -37,6 +46,7 @@ class scanDB:
 			#Remove uneeded data. 
 			PTime = PTime[2:]
 
+			#Get all other data. 
 			PLoc = row[3]
 			Duration = row[4]
 			Veh_Type = row[5]
@@ -44,21 +54,16 @@ class scanDB:
 			GLCode = row[7]
 			comments = row[8]
 
+			#Get the testers name and concat. 
 			testerName = row[9] + " " + row[10]
 			testerEmail = row[11]
 
+			#Add all the values to a list. 
 			one_row = [requestID, date_request, PTime, PLoc, Duration, Veh_Type, CCenter, GLCode, comments, testerName, testerEmail]
-			#print one_row
+			#Append the record to the table. 
 			rows.append(one_row)
 
-		
-		#print rows
+		print "[+] Data retrieved!"
+		#Return the 2D array. 
 		return rows
 
-
-
-
-
-#SELECT r.requestID, t.fName, t.lName, t.email FROM requestLine rl, request r, tester t WHERE rl.requestID = r.requestID AND rl.testerID = t.testerID ORDER BY r.requestID
-
-#SELECT r.requestid, r.date_request, r.PTime, r.PLoc, r.Duration, r.Veh_Type, r.Cost_Center, r.GL_Code, r.add_comments, t.fName, t.lName, t.email FROM request r, tester t, requestLine rl WHERE rl.requestID = r.requestID AND rl.testerID = t.testerID
