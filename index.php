@@ -144,7 +144,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text" id="PLoc" name="PLoc" >
+								 <input type="text" id="PLoc" value="200 Bath Road, Slough, SL1 3XE, UK" name="PLoc" >
 							</div>
 						</div>
 
@@ -154,7 +154,7 @@
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text"  id="DLoc" name="DLocation" >
+								 <input type="text" value="200 Bath Road, Slough, SL1 3XE, UK" id="DLoc" name="DLoc" >
 							</div>
 						</div>
 
@@ -165,6 +165,16 @@
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								 <input type="text" name="email" >
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
+								Username<div class="required_input">*</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-6 form-label setting-form">
+								 <input type="text" name="username" placeholder="e.g kipatel">
 							</div>
 						</div>
 
