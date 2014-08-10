@@ -1,27 +1,3 @@
-# from smtplib import SMTP
-# import datetime
-
-# debuglevel = 0
-
-# smtp = SMTP()
-# smtp.set_debuglevel(debuglevel)
-# smtp.connect('kiransprojects.co.uk', 26)
-# smtp.login('kiran@kiransprojects', 'Kunal200')
-
-# from_addr = "Kiran Patel <john@doe.net>"
-# to_addr = "kiran_patel94@hotmail.com"
-
-# subj = "hello"
-# date = datetime.datetime.now().strftime( "%d/%m/%Y %H:%M" )
-
-# message_text = "Hello\nThis is a mail from your server\n\nBye\n"
-
-# msg = "From: %s\nTo: %s\nSubject: %s\nDate: %s\n\n%s" % ( from_addr, to_addr, subj, date, message_text )
-
-# smtp.sendmail(from_addr, to_addr, msg)
-# smtp.quit()
-# raw_input()
-
 #!/usr/bin/python
 
 import smtplib 
@@ -32,7 +8,7 @@ text = "here is the message"
 
 #Gmail 
 gmail_sender = "kiranpatel259@gmail.com"
-gmail_password="Kunal200"
+gmail_password=""
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 
@@ -56,3 +32,5 @@ print 'email sent'
 #	print str(e)
 
 server.quit()
+
+##NEED TO SET 3rd PARTY APPS IN GMAIL ITSELF. 
