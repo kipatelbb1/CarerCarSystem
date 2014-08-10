@@ -22,20 +22,20 @@ Add 30 min interval for bookings.
 
 
 Internal: 
-Add initial registration 
+Add initial registration [DONE]
 Commenting 
 
 
 --Easy Implementations-- 
 up to 6pm to book at time [DONE]
-add initial registration 
+add initial registration [DONE]
 commenting [DONE]
 
 --Medium Implementaiton--
 Admin Viewer to see costs
 Cost Center Dynamics 
 View Next Week and Previous Week Bookings 
-Email Capabilities. 
+Email Capabilities. [DONE]
 
 --Hard Implementations-- 
 Add 30 min interval for bookings and regression testing [DONE]

@@ -23,7 +23,7 @@ DLocation <= 99
 email = 100 [Closed] 
 
 
-Registration --> have a cookie set on the computer so that it can determine to show registration or not. 
+Registration --> have a cookie set on the computer so that it can determine to show registration or not. [DONE]
 
 
 
