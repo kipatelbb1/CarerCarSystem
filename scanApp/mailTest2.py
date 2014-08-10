@@ -68,7 +68,7 @@ body = '\r\n'.join([
 		])
 
 #try: 
-server.sendmail(gmail_sender, to, msg.as_string)
+server.sendmail(gmail_sender, to, msg.as_string())
 print 'email sent'
 #except Exception,e: 
 #	print str(e)

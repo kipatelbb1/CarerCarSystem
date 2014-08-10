@@ -56,13 +56,6 @@ class scanDB:
 		return rows
 
 
-db = scanDB()
-con = db.connect("127.0.0.1", "root", "", "carey_car", 3306)
-rows = db.executeQuery(con, "SELECT r.requestid, r.date_request, r.PTime, r.PLoc, r.Duration, r.Veh_Type, r.Cost_Center, r.GL_Code, r.add_comments, t.fName, t.lName, t.email FROM request r, tester t, requestLine rl WHERE rl.requestID = r.requestID AND rl.testerID = t.testerID GROUP BY r.requestID ORDER BY r.requestID")
-
-
-for row in rows: 
-	print row
 
 
 

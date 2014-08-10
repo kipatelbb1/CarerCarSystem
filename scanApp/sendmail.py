@@ -1,3 +1,4 @@
+
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -23,18 +24,29 @@ class sendMail:
 
 	def createBody(self, row, gmail_sender, to):
 		msg = MIMEMultipart('alternative')
-		msg['Subject'] = "Test"
+		msg['Subject'] = "Carey Car Request"
 		msg['From'] = gmail_sender
 		msg['To'] = to[0]
 
-		text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.python.org"
+		text = "Carey Car Request"
 		html = """\
 		<html>
 		  <head></head>
 		  <body>
 		    <p>Hi!<br>
-		       How are you?<br>
-		       Here is the <a href="http://www.python.org">link</a> you wanted.
+		       Date: """ + str(row[1]) + """<br/>
+		       Pick Up Time: """ + str(row[2]) + """<br/>
+		       Pick Up Location: """ + str(row[3]) + """<br/>
+		       Duration: """ + str(row[4]) + """<br/>
+		       Vehicle Type: """ + str(row[5]) + """<br/>
+		       Cost Center: """ + str(row[6]) + """<br/>
+		       GL Code: """ + str(row[7]) + """<br/>
+		       Additional Information: """ + str(row[8]) + """<br/><br/>
+ 		       Tester Name: """ + str(row[9]) + """<br/>
+ 		       Tester Email: """ + str(row[10]) + """<br/><br/><br/>
+
+ 		       Please do not respond directly to this email as the inbox is unregulated. Email the tester directly. 
+
 		    </p>
 		  </body>
 		</html>
@@ -60,25 +72,5 @@ class sendMail:
 		return self.gmail_sender
 
 
-#Create Mail Instance. 
-mail = sendMail()
-
-#Set up connection to mail server with credential parameters. 
-mail.setup('kiranpatel259@gmail.com', '')
-
-#Get the sender details. 
-sender = mail.getSender()
-
-#Create list of people to send email too. 
-to = ['kiran_patel94@hotmail.com', '1202117@my.brunel.ac.uk']
-
-#Create the body of the mail message and pass the row data. 
-msg = mail.createBody(1, sender, to)
-
-#Send the message 
-mail.send(sender,to, msg)
 
 
-#Close the SMTP server object. 
-mail.close()
-raw_input()
