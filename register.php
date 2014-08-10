@@ -1,4 +1,10 @@
 <?php 
+
+	if(!isset($_POST['username']))
+	{
+		header('Location: index.php'); 
+	}
+
 	include 'connection.php';
 
 	ini_set("display_errors", 1);
