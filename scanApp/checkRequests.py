@@ -19,7 +19,7 @@ class scanDB:
 		print "[+] Connected!"
 		return con 
 
-	def executeQuery(self, con, query): 
+	def getRequests(self, con, query): 
 		print "[+] Retrieving data.."
 		#Get Cursor. 
 		cur = con.cursor()
@@ -66,4 +66,17 @@ class scanDB:
 		print "[+] Data retrieved!"
 		#Return the 2D array. 
 		return rows
+
+	def getEmails(self, con, query):
+		print "[+] Getting Emails.."
+
+		cur = con.cursor()
+		cur.execute(query)
+		emails = []
+
+		for row in cur.fetchall():
+			emails.append(row[0])
+
+
+		return emails
 

@@ -9,7 +9,7 @@ db = scanDB()
 con = db.connect("127.0.0.1", "root", "", "carey_car", 3306)
 
 #Execute Query and store 2D array in rows. 
-rows = db.executeQuery(con, "SELECT r.requestid, r.date_request, r.PTime, r.PLoc, r.Duration, r.Veh_Type, r.Cost_Center, r.GL_Code, r.add_comments, t.fName, t.lName, t.email FROM request r, tester t, requestLine rl WHERE rl.requestID = r.requestID AND rl.testerID = t.testerID GROUP BY r.requestID ORDER BY r.requestID")
+rows = db.getRequests(con, "SELECT r.requestid, r.date_request, r.PTime, r.PLoc, r.Duration, r.Veh_Type, r.Cost_Center, r.GL_Code, r.add_comments, t.fName, t.lName, t.email FROM request r, tester t, requestLine rl WHERE rl.requestID = r.requestID AND rl.testerID = t.testerID GROUP BY r.requestID ORDER BY r.requestID")
 
 #Create Mail Instance. 
 mail = sendMail()
@@ -22,11 +22,17 @@ sender = mail.getSender()
 
 #Create list of people to send email too.
 
-##GET ALL EMAILS FOR TESTERS AND CAREYS EMAIL AND FTS MANAGEMENT 
+#Enter all constant emails here.
 to = ['kiran_patel94@hotmail.com']
 
 #For each record.. 
 for row in rows:
+	#Get all the emails for a request. 
+	testerEmails = db.getEmails(con, "SELECT t.email FROM tester t, requestline rl WHERE rl.testerID = t.testerID AND rl.requestID=" + row[0])
+	#For each tester related to a request ID, append thier email to the out list. 
+	for emails in testerEmails: 
+		to.append(str(emails)) 
+	
 	msg = mail.createBody(row, sender, to)
 	mail.send(sender, to, str(msg))
 
