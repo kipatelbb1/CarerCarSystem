@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2014 at 03:08 PM
+-- Generation Time: Aug 11, 2014 at 01:08 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -37,48 +37,21 @@ CREATE TABLE IF NOT EXISTS `request` (
   `Cost_Center` varchar(6) DEFAULT NULL,
   `GL_Code` varchar(6) DEFAULT NULL,
   `add_Comments` varchar(500) NOT NULL,
+  `status` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`requestID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Table contains data about requests' AUTO_INCREMENT=32 ;
-
--- --------------------------------------------------------
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Table contains data about requests' AUTO_INCREMENT=109 ;
 
 --
--- Table structure for table `requestline`
+-- Dumping data for table `request`
 --
 
-CREATE TABLE IF NOT EXISTS `requestline` (
-  `RequestLineID` int(255) NOT NULL AUTO_INCREMENT,
-  `requestID` varchar(100) NOT NULL,
-  `testerID` varchar(3) NOT NULL,
-  PRIMARY KEY (`RequestLineID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Data about each request' AUTO_INCREMENT=59 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tester`
---
-
-CREATE TABLE IF NOT EXISTS `tester` (
-  `testerID` int(3) NOT NULL AUTO_INCREMENT,
-  `fName` varchar(100) NOT NULL,
-  `lName` varchar(100) NOT NULL,
-  `MobileNo` varchar(11) NOT NULL,
-  `PLocation` varchar(200) NOT NULL,
-  `DLocation` varchar(200) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL,
-  `username` varchar(10) NOT NULL,
-  PRIMARY KEY (`testerID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Table holds data on the Testers' AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `tester`
---
-
-INSERT INTO `tester` (`testerID`, `fName`, `lName`, `MobileNo`, `PLocation`, `DLocation`, `email`, `Password`, `username`) VALUES
-(1, 'Kiran', 'Patel', '074512365', '200 Bath Road', '200 Bath Road', 'kipatel@blackberry.com', '03e9db264eefdedef0ab380e9854c940', 'kipatel'),
-(2, 'Asif', 'Jafferali', '123', '200 Bath Road', '200 Bath Road', 'ajafferali@blackberry.com', '03e9db264eefdedef0ab380e9854c940', 'ajafferali');
+INSERT INTO `request` (`requestID`, `date_request`, `PTime`, `PLoc`, `Duration`, `DLocation`, `Veh_Type`, `Cost_Center`, `GL_Code`, `add_Comments`, `status`) VALUES
+(103, '2014-08-12', '00:14:00', 'Slough UK', '30', 'Slough EMEA', 'executive', '313211', '650003', '', NULL),
+(104, '2014-08-21', '00:10:00', 'Slough UK', '30', 'Slough EMEA', 'executive', '313211', '650003', '', NULL),
+(105, '2014-08-19', '00:10:00', 'Slough UK', '30', 'Slough EMEA', 'executive', '313211', '650003', '', 'SENT'),
+(106, '2014-08-12', '00:10:00', 'Slough UK', '30', 'Slough EMEA', 'executive', '313211', '650003', '', 'SENT'),
+(107, '2014-08-12', '00:10:00', 'Slough UK', '30', 'Slough EMEA', 'executive', '313000', '650003', '', NULL),
+(108, '2014-08-15', '00:13:30', 'Slough UK', '30', 'Slough EMEA', 'executive', '313211', '650003', '', 'SENT');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
