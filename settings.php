@@ -164,7 +164,7 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="carey_contact">Carey Car Contact Details: <br/><br/>
+				<div class="carey_contact">Carey Car Contact Details: (If you ever need to contact directly)<br/><br/>
 					Email: <a href="mailto:res@careyuk.com">res@careyuk.com</a><br/>
 					Tel: <a href="tel:02083267600 ">0208 3267600 </a>
 				</div>

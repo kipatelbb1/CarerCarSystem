@@ -1,5 +1,5 @@
-Validation ranges and settings.  
-Session error messages
+Validation ranges and settings.  [DONE]
+Session error messages [DONE]
 Emails
 Email Managers at the same time. 
 admin work to see who posted a request when

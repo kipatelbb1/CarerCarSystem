@@ -30,6 +30,11 @@ while True:
 	#Enter all constant emails here.
 	to = ['kipatel@blackberry.com']
 
+	#Add FTS managers. 
+	#fts_management = ['ehayden@blackberry.com', 'fmastrangioli@blackberry.com', 'gdamaro@blackberry.com']
+	#to = to + fts_management
+
+
 	#For each record.. 
 	for row in rows:
 		#Get all the emails for a request. 
