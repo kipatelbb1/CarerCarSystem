@@ -119,7 +119,7 @@
 						while($row = mysqli_fetch_array($set))
 						{
 							echo "<tr>"; 
-								echo "<td>" . $row['requestID'] . "</td>"; 
+								echo "<td><a href='view_request.php?reqid=" . $row['requestID'] . "'>" . $row['requestID'] . "</a></td>"; 
 								echo "<td>" . $row['date_request'] . "</td>";
 								echo "<td>" . $row['PTime'] . "</td>"; 
 								echo "<td>" . $row['PLoc'] . "</td>"; 
