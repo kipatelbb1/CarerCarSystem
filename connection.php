@@ -3,7 +3,7 @@
 	// //Connection Details. 
 	$host = "localhost"; 
 	$username="root"; 
-	$password="ftstesting"; 
+	$password=""; 
 	$database="carey_car"; 
 
 

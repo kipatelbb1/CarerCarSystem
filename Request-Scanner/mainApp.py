@@ -1,4 +1,4 @@
-from checkRequests import scanDB
+gitfrom checkRequests import scanDB
 from sendmail import sendMail
 
 print "[+] Carer Car System Initialising.."
@@ -6,7 +6,9 @@ print "[+] Carer Car System Initialising.."
 db = scanDB()
 
 #Connect to the MYSQL database. 
+
 con = db.connect("localhost", "root", "ftstesting", "carey_car", 3306)
+
 
 ##APPLICATION LOOP (RESET VARIABLES OR THEY MAY DO IT THEMSELVES.)
 
@@ -17,7 +19,11 @@ rows = db.getRequests(con, "SELECT r.requestid, r.date_request, r.PTime, r.PLoc,
 mail = sendMail()
 
 #Set up connection to mail server with credential parameters. 
+<<<<<<< HEAD
 mail.setup('careycarbb@gmail.com', 'ftstesting')
+=======
+mail.setup('kiranpatel259@gmail.com', '')
+>>>>>>> e120b6b90a98149bbe7d7d9b0800daf1e6dc9afa
 
 #Get the sender details. 
 sender = mail.getSender()

@@ -326,7 +326,7 @@
 			<div class="col-xs-12">
 				<?php 
 					//Print the current working week we are displaying results for. 
-					echo '<div class="weekoff">Schedule for:<br/> ' .date("d-m-Y",strtotime('monday this week')).' To '. date("d-m-Y",strtotime("sunday this week")) . '</div>';    
+					//echo '<div class="weekoff">Schedule for:<br/> ' .date("d-m-Y",strtotime('monday this week')).' To '. date("d-m-Y",strtotime("sunday this week")) . '</div>';    
 					//Init the testDate.php to extract some data from the database and get it ready for the timetable. 
 					include 'testDate.php';
 				?>
