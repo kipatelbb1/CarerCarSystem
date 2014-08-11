@@ -41,7 +41,7 @@
 					<div class="panel-body">
 
 						<form method="POST" action="loginTester.php">
-							Username: <input type="text" name="name" /> <br/><br/>
+							Email: <input type="text" name="email" /> <br/><br/>
 							Password: <input type="password" name="password" /> <br/><br/>
 
 							<input type="submit" Value="Submit">

@@ -342,9 +342,6 @@
 		<div class="row hidden-xs">
 			<div class="col-xs-12">
 
-				
-
-
 			<table>
 				<tr>
 					<th class="top-header"></th>
