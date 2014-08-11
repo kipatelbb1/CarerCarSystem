@@ -1,26 +1,52 @@
 <?php
 
+	require_once('class.phpmailer.php');
+
 	ini_set("display_errors", 1);
 	ini_set("track_errors", 1);
 	ini_set("html_errors", 1);
 	error_reporting(E_ALL);
 
-	$to = "kipatel@blackberry.com";
-	$subject = "Hi!";
-	$body="test".PHP_EOL;
-	$body.="Hello World. If all went well then you can see this mail in your Inbox".PHP_EOL;
-	$body.="Regards".PHP_EOL;
-	$body.="Idrish Laxmidhar".PHP_EOL;
-	$body.="http://i-tech-life.blogspot.com".PHP_EOL;
+	$mail = new PHPMailer(true);
 
-	$headers = "From: postmaster@localhost"; 
+	//Send mail using gmail
+	
+	    // $mail->IsSMTP(); // telling the class to use SMTP
+	    // $mail->SMTPAuth = true; // enable SMTP authentication
+	    // $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
+	    // $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+	    // $mail->Port = 446; // set the SMTP port for the GMAIL server
+	    // $mail->Username = "careycarbb@gmail.com"; // GMAIL username
+	    // $mail->Password = "ftstesting"; // GMAIL password
 
-	if (mail($to, $subject, $body, $headers)) {
-	echo("Message successfully sent!
-	");
-	} else {
-	echo("Message delivery failed...
-	");
+	    $mail->SMTPSecure = "ssl";  
+$mail->Host='smtp.gmail.com';  
+$mail->Port=465;   
+$mail->Username   = 'careycarbb@gmail.com'; // SMTP account username  
+$mail->Password   = 'ftstesting';  
+$mail->SMTPKeepAlive = true;  
+$mail->Mailer = "smtp"; 
+$mail->IsSMTP(); // telling the class to use SMTP  
+$mail->SMTPAuth   = true;                  // enable SMTP authentication  
+$mail->CharSet = 'utf-8';  
+$mail->SMTPDebug  = 0;   
+
+
+	
+
+	//Typical mail data
+	$mail->AddAddress("kipatel@blackberry.com", "Kiran");
+	$mail->SetFrom("root@localhost", "localhost");
+	$mail->Subject = "My Subject";
+	$mail->Body = "Mail contents";
+
+	try{
+	    $mail->Send();
+	    echo "Success!";
+	} catch(Exception $e){
+	    //Something went bad
+	    echo "Fail :(";
+	   	echo $e; 
 	}
 
 
