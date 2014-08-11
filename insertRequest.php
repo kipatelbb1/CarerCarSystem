@@ -22,6 +22,7 @@
 	$Duration = $_POST['duration']; 
 	$Drop = $_POST['DLocation']; 
 	$Veh = $_POST['veh_type'];
+	$status = "NOT_SENT"; 
 	
 	
 	
@@ -31,7 +32,7 @@
 
 	$add_Comments = $_POST['add']; 
 
-	$query = "INSERT INTO request(date_request, PTime, PLoc, Duration, DLocation , Veh_Type, Cost_Center, GL_Code, add_Comments) VALUES ('$Date', '$PTime', '$PLoc' , '$Duration' , '$Drop', '$Veh', '$CCenter', '$GLCode' , '$add_Comments')"; 
+	$query = "INSERT INTO request(date_request, PTime, PLoc, Duration, DLocation , Veh_Type, Cost_Center, GL_Code, add_Comments, status) VALUES ('$Date', '$PTime', '$PLoc' , '$Duration' , '$Drop', '$Veh', '$CCenter', '$GLCode' , '$add_Comments', '$status')"; 
 	//echo $Date; 
 	//$query = "INSERT INTO request(date_request) VALUES ('$Date')"; 
 	

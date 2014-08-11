@@ -31,22 +31,22 @@ class sendMail:
 		msg['From'] = gmail_sender
 		msg['To'] = to[0]
 
-		text = "Carey Car Request"
+		text = "Carey Car Request - DO NOT RESPOND DIRECTLY TO THIS EMAIL, EMAIL THE TESTER."
 		html = """\
 		<html>
 		  <head></head>
 		  <body>
-		    <p>Hi!<br>
-		       Date: """ + str(row[1]) + """<br/>
-		       Pick Up Time: """ + str(row[2]) + """<br/>
-		       Pick Up Location: """ + str(row[3]) + """<br/>
-		       Duration: """ + str(row[4]) + """<br/>
-		       Vehicle Type: """ + str(row[5]) + """<br/>
-		       Cost Center: """ + str(row[6]) + """<br/>
-		       GL Code: """ + str(row[7]) + """<br/>
-		       Additional Information: """ + str(row[8]) + """<br/><br/>
- 		       Tester Name: """ + str(row[9]) + """<br/>
- 		       Tester Email: """ + str(row[10]) + """<br/><br/><br/>
+		    <p>Hi Carey,<br><br>Please find below my request<br><br><br>
+		       Date: """ + str(row[1]) + """<br/><br>
+		       Pick Up Time: """ + str(row[2]) + """<br/><br>
+		       Pick Up Location: """ + str(row[3]) + """<br/><br>
+		       Duration: """ + str(row[4]) + """<br/><br>
+		       Vehicle Type: """ + str(row[5]) + """<br/><br>
+		       Cost Center: """ + str(row[6]) + """<br/><br>
+		       GL Code: """ + str(row[7]) + """<br/><br>
+		       Additional Information: """ + str(row[8]) + """<br/><br/><br>
+ 		       Tester Name: """ + str(row[9]) + """<br/><br>
+ 		       Tester Email: """ + str(row[10]) + """<br/><br/><br/><br>
 
  		       Please do not respond directly to this email as the inbox is unregulated. Email the tester directly. 
 

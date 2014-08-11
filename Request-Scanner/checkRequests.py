@@ -80,3 +80,13 @@ class scanDB:
 
 		return emails
 
+	def updateStatus(self, con, query):
+		print "[+] Updating Status"
+		cur = con.cursor()
+		try:
+			cur.execute(query)
+			con.commit()
+		except:
+			con.rollback()
+		return True
+
