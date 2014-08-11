@@ -6,10 +6,8 @@ $(document).ready(function()
 
 	$("#datepicker").datepicker(
     { dateFormat: 'dd/mm/yy',
-      minDate: new Date(), // Min Date to Today. 
-      
-
-    }
-   );
+      minDate: new Date() // Min Date to Today. 
+     
+    });
 
 }); 

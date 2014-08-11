@@ -158,6 +158,16 @@
 
 			<div class="col-xs-12">
 					<div class="alert alert-danger" role="alert" id="settings-error">Ensure you enter all details!</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="carey_contact">Carey Car Contact Details: <br/><br/>
+					Email: <a href="mailto:res@careyuk.com">res@careyuk.com</a><br/>
+					Tel: <a href="tel:02083267600 ">0208 3267600 </a>
+				</div>
 
 			</div>
 
