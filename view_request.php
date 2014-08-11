@@ -159,7 +159,15 @@
 			</div>
 
 			<div class="col-xs-12 col-sm-6 form-label setting-form">
-				<input type="text" value="<?php echo $row['date_request'] ?>" name="DLocation" disabled>
+
+				<?php 
+					$date_req = strtotime( $row['date_request'] );
+
+				?>
+
+
+
+				<input type="text" value="<?php echo date('d-m-Y', $date_req) ?>" name="DLocation" disabled>
 			</div>
 		</div>
 

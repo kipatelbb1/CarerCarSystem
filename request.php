@@ -118,9 +118,12 @@
 						
 						while($row = mysqli_fetch_array($set))
 						{
+							#Convert the MYSQL date to a time
+							$date_req = strtotime( $row['date_request'] );
 							echo "<tr>"; 
 								echo "<td><a href='view_request.php?reqid=" . $row['requestID'] . "'>" . $row['requestID'] . "</a></td>"; 
-								echo "<td>" . $row['date_request'] . "</td>";
+								#Apply dd-mm-yyyy format. 
+								echo "<td>" . date( 'd-m-Y', $date_req ) . "</td>";
 								echo "<td>" . substr($row['PTime'], 3) . "</td>"; 
 								echo "<td>" . $row['PLoc'] . "</td>"; 
 								echo "<td>" . $row['Duration'] . "</td>"; 
