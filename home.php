@@ -234,8 +234,8 @@
 								<div class="col-xs-12 col-sm-6 form-label">
 									 <select name="veh_type">
 
-									<option value="executive">Executive Saloon</option>
-									<option value="mpv">MPV</option>
+									<option value="Executive">Executive Saloon</option>
+									<option value="MPV">MPV</option>
 
 								</select></div>
 							</div>
