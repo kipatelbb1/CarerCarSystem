@@ -134,9 +134,7 @@
 
 
 					?>
-
-					<!-- PHP SCRIPT TO POPULATE WITH DB ENTRIES -->
-					
+				
 				</table>
 			</div>
 		</div>

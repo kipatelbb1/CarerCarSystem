@@ -14,9 +14,11 @@
 		$dateToCheck = strtotime($row['date_request']); 
 		if($dateToCheck >= strtotime('monday this week') and $dateToCheck <= strtotime('sunday this week'))
 		{
+			echo "<a href='view_request.php?reqid=" . $row['requestID'] . "'>"; 
 			echo "Name: " . $row['fName'] . " " . $row['lName'] . "<br/>"; 
 			echo "Time: " . $row['PTime'] . "<br/>"; 
 			echo "Date: " . $row['date_request'] . "<br/>"; 
+			echo "</a>"; 
 			echo "<br/>"; 
 		}
 	}
