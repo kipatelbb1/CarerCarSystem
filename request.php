@@ -160,7 +160,7 @@
 						
 							echo "<div class='panel-body status_format'>"; 
 
-
+								echo "<a href='view_request.php?reqid=" . $row['requestID'] . "'>";
 								echo "<div class='mobile-request'>"; 
 									echo "<span> Request ID: " . $row['requestID'] . "</span>" . "<br/>"; 
 									echo "<span> Date: " . $row['date_request'] . "</span>". "<br/>";
@@ -170,6 +170,7 @@
 									echo "<span> Drop Off Location: " . $row['DLocation'] . "</span>". "<br/>"; 
 									echo "<span> Vehicle Type: " . $row['Veh_Type'] . "</span>". "<br/>"; 
 								echo "</div>"; 
+								echo "</a>"; 
 
 							echo "</div>"; 
 
