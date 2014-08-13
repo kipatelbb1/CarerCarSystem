@@ -41,7 +41,7 @@ class sendMail:
 		#self.server.starttls()
 		#self.server.ehlo
 
-	def setup(self,gmail_sender, gmail_password):
+	def setup(self):
 		print "[+] Logging into SMTP Server"
 		#Login to the gmail server. 
 		#self.server.login(gmail_sender, gmail_password)
@@ -57,42 +57,24 @@ class sendMail:
 
 	def createBody(self, row, gmail_sender, to):
 		print "[+] Creating HTML Email"
-		msg = MIMEMultipart('alternative')
-		msg['Subject'] = "Carey Car Request"
-		msg['From'] = gmail_sender
-		msg['To'] = to[0]
+		msg=""
+		# msg = MIMEMultipart('alternative')
+		# msg['Subject'] = "Carey Car Request"
+		# msg['From'] = gmail_sender
+		# msg['To'] = to[0]
 
-		text = "Carey Car Request - DO NOT RESPOND DIRECTLY TO THIS EMAIL, EMAIL THE TESTER."
-		html = """\
-		<html>
-		  <head></head>
-		  <body>
-		    <p>Hi Carey,<br><br>Please find below my request<br><br><br>
-		       Date: """ + str(row[1]) + """<br/><br>
-		       Pick Up Time: """ + str(row[2]) + """<br/><br>
-		       Pick Up Location: """ + str(row[3]) + """<br/><br>
-		       Duration: """ + str(row[4]) + """<br/><br>
-		       Vehicle Type: """ + str(row[5]) + """<br/><br>
-		       Cost Center: """ + str(row[6]) + """<br/><br>
-		       GL Code: """ + str(row[7]) + """<br/><br>
-		       Additional Information: """ + str(row[8]) + """<br/><br/><br>
- 		       Tester Name: """ + str(row[9]) + """<br/><br>
- 		       Tester Email: """ + str(row[10]) + """<br/><br/><br/><br>
+		
+		html = "Hi Carey,\n\n Please find my request below:\n \n Date: " + str(row[1]) + "\n Pick Up Time: " + str(row[2]) + "\n Pick Up Location: " + str(row[3]) + "\n Duration: " + str(row[4]) + "\n Vehicle Type: " + str(row[5]) + "\n Cost Center: " + str(row[6]) + "\n GL Code: " + str(row[7]) + "\n Additional Information: " + str(row[8]) + "\n Tester Name: " + str(row[9]) + "\n Tester Email: " + str(row[10]) + "\n \n Please do not respond directly to this email as the inbox is unregulated. Email the tester directly. "
+		#print html
 
- 		       Please do not respond directly to this email as the inbox is unregulated. Email the tester directly. 
-
-		    </p>
-		  </body>
-		</html>
-		"""
-
+		msg = html
 		# Record the MIME types of both parts - text/plain and text/html.
-		part1 = MIMEText(text, 'plain')
-		part2 = MIMEText(html, 'html')
+		# part1 = MIMEText(text, 'plain')
+		# part2 = MIMEText(html, 'html')
 
 		#Attach to the message. 
-		msg.attach(part1)
-		msg.attach(part2)
+		# msg.attach(part1)
+		# msg.attach(part2)
 		#Return message. 
 		return msg
 
@@ -102,11 +84,13 @@ class sendMail:
 		try:
 			#Send the mail through the server. 
 			#self.server.sendmail(gmail_sender, to, str(msg))
-			self.bb.email.send(to="kipatel@blackberry.com", subject="Test", body=str(msg), wait_for_sent=True)
+			self.bb.email.send(to=to, subject="Carey Car Request - DO NOT RESPOND DIRECTLY TO THIS EMAIL, TESTER EMAIL SHOWN BELOW.", body=str(msg), wait_for_sent=True)
 			#Print to console message has been sent. 
 			print "[+] MESSAGE SENT TO " + str(to)
+			return True
 		except:
 			print "[+] MESSAGE WAS NOT SENT. RESTART SERVER"
+			return False
 
 	def close(self):
 		#Close connection with server. 
