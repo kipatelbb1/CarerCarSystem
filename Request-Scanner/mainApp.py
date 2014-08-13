@@ -20,7 +20,7 @@ while True:
 	mail = sendMail()
 
 	#Set up connection to mail server with credential parameters. 
-	mail.setup('careycarbb@gmail.com', 'ftstesting')
+	mail.setup('kipatel@blackberry.com', 'Password123?')
 
 	#Get the sender details. 
 	sender = mail.getSender()

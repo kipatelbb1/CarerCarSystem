@@ -3,25 +3,56 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+
+import sys
+import os
+import time
+import random, string
+import threading
+import thread
+import sys
+import random
+import MySQLdb
+sys.path.append("C:/aimplatform2/")
+from aim.blackberry.blackberry_manager import BlackBerryManager
+from aim.blackberry.blackberry import BlackBerry
+from aim.blackberry.features._common import features_common, DEFAULT_WAIT_FOR_TIMEOUT
+from aim.blackberry.lib._common import libs_common
+from apps.gtr.testcases.fts.lib import bbm
+from aim.test_executor.constants import PARAM_LOG_DIRECTORY
+from aim.util.logger import get_logger, AIM_ROOT_LOG_NAME
+from aim.util.logger import setup_aim_logger
+
+
+
+
+
 class sendMail:
 	#Create class variable. 
 	server = None
 	gmail_sender = None
+	bb = None
 
 	def __init__(self):
 		#Define where to connect with what port.
 		print "[+] Connecting to SMTP Server" 
-		self.server = smtplib.SMTP('smtp.gmail.com', 587)
-		self.server.ehlo()
-		self.server.starttls()
-		self.server.ehlo
+		#self.server = smtplib.SMTP('cas-hq.rim.net', 2)
+		#self.server.ehlo()
+		#self.server.starttls()
+		#self.server.ehlo
 
 	def setup(self,gmail_sender, gmail_password):
 		print "[+] Logging into SMTP Server"
 		#Login to the gmail server. 
-		self.server.login(gmail_sender, gmail_password)
+		#self.server.login(gmail_sender, gmail_password)
 		#Set the class variable. 
-		self.gmail_sender =  gmail_sender
+		#self.gmail_sender =  gmail_sender
+		#Setup BlackBerry Device Manager
+		bb_manager = BlackBerryManager()
+		bb_manager.initialize()
+		self.bb = bb_manager.get_blackberry()
+		self.bb.initialize()
+
 
 
 	def createBody(self, row, gmail_sender, to):
@@ -70,7 +101,8 @@ class sendMail:
 		print "[+] Sending email.."
 		try:
 			#Send the mail through the server. 
-			self.server.sendmail(gmail_sender, to, str(msg))
+			#self.server.sendmail(gmail_sender, to, str(msg))
+			self.bb.email.send(to="kipatel@blackberry.com", subject="Test", body=str(msg), wait_for_sent=True)
 			#Print to console message has been sent. 
 			print "[+] MESSAGE SENT TO " + str(to)
 		except:
