@@ -33,7 +33,7 @@ class scanDB:
 			#Convert to string 
 			requestID = str(requestID)
 			#Format correctly. 
-			requestID = requestID[:2]
+			#requestID = requestID[:2]
 
 			#Get the date
 			date_request = row[1]
@@ -86,7 +86,9 @@ class scanDB:
 		try:
 			cur.execute(query)
 			con.commit()
+			return True
 		except:
 			con.rollback()
-		return True
+			return False
+		
 

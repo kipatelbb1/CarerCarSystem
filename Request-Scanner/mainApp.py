@@ -3,7 +3,7 @@ from checkRequests import scanDB
 import time 
 from MAILTEST import sendMail
 
-time_to_sleep = 30
+time_to_sleep = 60*10
 
 print "[+] Carer Car System Initialising.."
 #Initialise MYSQL database connection. 
@@ -19,39 +19,40 @@ while True:
 
 	#Create Mail Instance. 
 	mail = sendMail()
-	bb = mail.setup()
 
 	#Set up connection to mail server with credential parameters. 
-	#mail.setup('careycarbb@gmail.com', 'ftstesting')
+	mail.setup()
 
 	#Get the sender details. 
-	#sender = mail.getSender()
+	sender = mail.getSender()
 
 	#Create list of people to send email too.
 
 	#Enter all constant emails here.
-	#to = ['kipatel@blackberry.com']
-	to = "kipatel@blackberry.com"
+	to = "kipatel@blackberry.com;kipatel.bb.1@gmail.com"
+
 	#Add FTS managers. 
 	#fts_management = ['ehayden@blackberry.com', 'fmastrangioli@blackberry.com', 'gdamaro@blackberry.com']
-	#to = to + fts_management
+	to = to + ";" + fts_management 
 
 
 	#For each record.. 
 	for row in rows:
 		#Get all the emails for a request. 
-		testerEmails = db.getEmails(con, "SELECT t.email FROM tester t, requestline rl WHERE rl.testerID = t.testerID AND rl.requestID=" + row[0])
+		testerEmails = db.getEmails(con, "SELECT t.email FROM tester t, requestline rl WHERE rl.testerID = t.testerID AND rl.requestID=" + str(row[0]))
 		#For each tester related to a request ID, append thier email to the out list. 
 		for emails in testerEmails: 
-			#to.append(str(emails)) 
-			print emails
+			to = to + ";" + emails 
+			print to
+
 		
 		#Create the body of the email with all the request details.
 		msg = mail.createBody(row, sender, to)
 		#Send the message to the out list. 
-		mail.sendMail(bb, to, str(msg))
+		flag = mail.send(sender, to, str(msg))
 		##UPDATE RECORD TO SET AS SENT. 
-		db.updateStatus(con, "UPDATE request SET status='SENT' WHERE status='NOT_SENT'")
+		if(flag):
+			db.updateStatus(con, "UPDATE request SET status='SENT' WHERE requestID=" + str(row[0]) + "")
 
 	print "[+] Sleeping for " + str(time_to_sleep) + " seconds."
 	time.sleep(time_to_sleep)
