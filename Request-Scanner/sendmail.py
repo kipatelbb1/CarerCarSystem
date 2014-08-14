@@ -55,7 +55,7 @@ class sendMail:
 			self.bb = bb_manager.get_blackberry()
 			self.bb.initialize()
 		except: 
-			print "[+] ERROR - ENSURE YOUR BLACKBERRY DEVICE IS CONNECTED CORRECTLY"
+			print "[+] ERROR - ENSURE YOUR BLACKBERRY DEVICE IS CONNECTED"
 
 
 
@@ -68,7 +68,7 @@ class sendMail:
 		# msg['To'] = to[0]
 
 		
-		html = "Hi Carey,\n\n Please find my request below:\n \n Date: " + str(row[1]) + "\n Pick Up Time: " + str(row[2]) + "\n Pick Up Location: " + str(row[3]) + "\n Duration: " + str(row[4]) + "\n Vehicle Type: " + str(row[5]) + "\n Cost Center: " + str(row[6]) + "\n GL Code: " + str(row[7]) + "\n Additional Information: " + str(row[8]) + "\n \n Tester Name: " + str(row[9]) + "\n \n Tester Email: " + str(row[10]) + "\n \n Please do not respond directly to this email as the inbox is unregulated. Email the tester directly. "
+		html = "Hi Carey,\n\n Please find my request below:\n \n Date: " + str(row[1]) + "\n Pick Up Time: " + str(row[2]) + "\n Pick Up Location: " + str(row[3]) + "\n Duration: " + str(row[4]) + "\n Vehicle Type: " + str(row[5]) + "\n Cost Center: " + str(row[6]) + "\n GL Code: " + str(row[7]) + "\n Additional Information: " + str(row[8]) + "\n Tester Name: " + str(row[9]) + "\n Tester Email: " + str(row[10]) + "\n \n Please do not respond directly to this email as the inbox is unregulated. Email the tester directly. "
 		#print html
 
 		msg = html

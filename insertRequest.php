@@ -27,8 +27,7 @@
 	
 	
 
-	$CCenter = "313211"; 
-	$GLCode = "650003"; 
+	include 'payment_credentials.php';
 
 	$add_Comments = $_POST['add']; 
 

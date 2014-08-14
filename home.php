@@ -236,6 +236,7 @@
 
 									<option value="Executive">Executive Saloon</option>
 									<option value="MPV">MPV</option>
+									<option value="Other">Other(Specify in additional comments)</option>
 
 								</select></div>
 							</div>

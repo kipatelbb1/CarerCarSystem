@@ -36,8 +36,7 @@
 
 				//STORE Session variables - Accessed throughout the system. 
 				$_SESSION['id'] = $row['testerID']; 
-				$_SESSION['name'] = $row['username']; 
-
+				$_SESSION['name'] = $row['fName'] . " " .  $row['lName']; 
 				$_SESSION['fName'] = $row['fName']; 
 				$_SESSION['lName'] = $row['lName']; 
 

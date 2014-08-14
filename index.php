@@ -171,16 +171,6 @@
 						
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Username<div class="required_input">*</div>
-							</div>
-
-							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text" name="username" placeholder="e.g kipatel">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								Password<div class="required_input">*</div>
 							</div>
 
@@ -205,10 +195,6 @@
 
 
 						<div id="errReg">
-
-
-
-
 
 						</div>
 					</div>
