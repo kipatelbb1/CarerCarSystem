@@ -1,6 +1,7 @@
 from checkRequests import scanDB
-from sendmail import sendMail
+#from sendmail import sendMail
 import time 
+from MAILTEST import sendMail
 
 time_to_sleep = 30
 
@@ -9,7 +10,7 @@ print "[+] Carer Car System Initialising.."
 db = scanDB()
 
 #Connect to the MYSQL database. 
-con = db.connect("localhost", "root", "ftstesting", "carey_car", 3306)
+con = db.connect("localhost", "root", "", "carey_car", 3306)
 
 ##APPLICATION LOOP (RESET VARIABLES OR THEY MAY DO IT THEMSELVES.)
 while True: 
@@ -18,18 +19,19 @@ while True:
 
 	#Create Mail Instance. 
 	mail = sendMail()
+	bb = mail.setup()
 
 	#Set up connection to mail server with credential parameters. 
-	mail.setup('careycarbb@gmail.com', 'ftstesting')
+	#mail.setup('careycarbb@gmail.com', 'ftstesting')
 
 	#Get the sender details. 
-	sender = mail.getSender()
+	#sender = mail.getSender()
 
 	#Create list of people to send email too.
 
 	#Enter all constant emails here.
-	to = ['kipatel@blackberry.com']
-
+	#to = ['kipatel@blackberry.com']
+	to = "kipatel@blackberry.com"
 	#Add FTS managers. 
 	#fts_management = ['ehayden@blackberry.com', 'fmastrangioli@blackberry.com', 'gdamaro@blackberry.com']
 	#to = to + fts_management
@@ -47,7 +49,7 @@ while True:
 		#Create the body of the email with all the request details.
 		msg = mail.createBody(row, sender, to)
 		#Send the message to the out list. 
-		mail.send(sender, to, str(msg))
+		mail.sendMail(bb, to, str(msg))
 		##UPDATE RECORD TO SET AS SENT. 
 		db.updateStatus(con, "UPDATE request SET status='SENT' WHERE status='NOT_SENT'")
 

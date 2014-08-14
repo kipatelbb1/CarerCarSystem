@@ -1,4 +1,3 @@
-
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -7,21 +6,22 @@ class sendMail:
 	#Create class variable. 
 	server = None
 	gmail_sender = None
+	bb = None 
 
 	def __init__(self):
 		#Define where to connect with what port.
+		from testEmail import sendMail
 		print "[+] Connecting to SMTP Server" 
-		self.server = smtplib.SMTP('smtp.gmail.com', 587)
-		self.server.ehlo()
-		self.server.starttls()
-		self.server.ehlo
+		self.server = sendMail()
+		self.bb = server.setBB()
+		
 
 	def setup(self,gmail_sender, gmail_password):
 		print "[+] Logging into SMTP Server"
 		#Login to the gmail server. 
-		self.server.login(gmail_sender, gmail_password)
+		#self.server.login(gmail_sender, gmail_password)
 		#Set the class variable. 
-		self.gmail_sender =  gmail_sender
+		#self.gmail_sender =  gmail_sender
 
 
 	def createBody(self, row, gmail_sender, to):
@@ -53,7 +53,7 @@ class sendMail:
 		    </p>
 		  </body>
 		</html>
-		"""
+		"""\
 
 		# Record the MIME types of both parts - text/plain and text/html.
 		part1 = MIMEText(text, 'plain')
@@ -70,7 +70,8 @@ class sendMail:
 		print "[+] Sending email.."
 		try:
 			#Send the mail through the server. 
-			self.server.sendmail(gmail_sender, to, str(msg))
+			#self.server.sendmail(gmail_sender, to, str(msg))
+			self.server.sendMail(self.bb, to, "Carey", str(msg), False)
 			#Print to console message has been sent. 
 			print "[+] MESSAGE SENT TO " + str(to)
 		except:
@@ -82,7 +83,3 @@ class sendMail:
 
 	def getSender(self):
 		return self.gmail_sender
-
-
-
-
