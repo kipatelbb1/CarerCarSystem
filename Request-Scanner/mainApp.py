@@ -1,21 +1,25 @@
 from checkRequests import scanDB
-#from sendmail import sendMail
+from sendmail import sendMail
 import time 
-from MAILTEST import sendMail
 
-time_to_sleep = 60*10
+time_to_sleep = 60 #Every 10 mins
 
 print "[+] Carer Car System Initialising.."
 #Initialise MYSQL database connection. 
 db = scanDB()
 
 #Connect to the MYSQL database. 
-con = db.connect("localhost", "root", "", "carey_car", 3306)
+#con = db.connect("localhost", "root", "", "carey_car", 3306)
 
 ##APPLICATION LOOP (RESET VARIABLES OR THEY MAY DO IT THEMSELVES.)
 while True: 
+	con = db.connect("localhost", "root", "", "carey_car", 3306)
 	#Execute Query and store 2D array in rows. 
 	rows = db.getRequests(con, "SELECT r.requestid, r.date_request, r.PTime, r.PLoc, r.Duration, r.Veh_Type, r.Cost_Center, r.GL_Code, r.add_comments, t.fName, t.lName, t.email FROM request r, tester t, requestLine rl WHERE rl.requestID = r.requestID AND rl.testerID = t.testerID AND r.status = 'NOT_SENT'  GROUP BY r.requestID ORDER BY r.requestID")
+
+       
+                
+
 
 	#Create Mail Instance. 
 	mail = sendMail()
@@ -28,16 +32,20 @@ while True:
 
 	#Create list of people to send email too.
 
-	#Enter all constant emails here.
-	to = "kipatel@blackberry.com;kipatel.bb.1@gmail.com"
+	#Enter all constant emails here. (EMAILS MUST BE SEPATED WITH ;)
+	to = "kipatel@blackberry.com"
 
 	#Add FTS managers. 
-	#fts_management = ['ehayden@blackberry.com', 'fmastrangioli@blackberry.com', 'gdamaro@blackberry.com']
-	to = to + ";" + fts_management 
-
+	#fts_management = 'ehayden@blackberry.com;fmastrangioli@blackberry.com;gdamaro@blackberry.com'
+	#print fts_management
+	#to = to + ";" + fts_management 
+	
 
 	#For each record.. 
 	for row in rows:
+
+		print row
+                
 		#Get all the emails for a request. 
 		testerEmails = db.getEmails(con, "SELECT t.email FROM tester t, requestline rl WHERE rl.testerID = t.testerID AND rl.requestID=" + str(row[0]))
 		#For each tester related to a request ID, append thier email to the out list. 
@@ -54,6 +62,8 @@ while True:
 		if(flag):
 			db.updateStatus(con, "UPDATE request SET status='SENT' WHERE requestID=" + str(row[0]) + "")
 
+
+	con.close()
 	print "[+] Sleeping for " + str(time_to_sleep) + " seconds."
 	time.sleep(time_to_sleep)
 

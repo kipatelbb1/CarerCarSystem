@@ -1,3 +1,4 @@
+
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -30,32 +31,31 @@ class sendMail:
 	#Create class variable. 
 	server = None
 	gmail_sender = None
-
-	bb = None 
-
+	bb = None
 
 	def __init__(self):
+		pass
 		#Define where to connect with what port.
-		from testEmail import sendMail
-		print "[+] Connecting to SMTP Server" 
-
-		self.server = sendMail()
-		self.bb = server.setBB()
-		
+		#print "[+] Connecting to SMTP Server" 
+		#self.server = smtplib.SMTP('cas-hq.rim.net', 2)
+		#self.server.ehlo()
+		#self.server.starttls()
+		#self.server.ehlo
 
 	def setup(self):
-		print "[+] Logging into SMTP Server"
+		print "[+] Connecting to BlackBerry Device.."
 		#Login to the gmail server. 
 		#self.server.login(gmail_sender, gmail_password)
 		#Set the class variable. 
 		#self.gmail_sender =  gmail_sender
-
-		#Setup BlackBerry Device Manager`
-		bb_manager = BlackBerryManager()
-		bb_manager.initialize()
-		self.bb = bb_manager.get_blackberry()
-		self.bb.initialize()
-
+		#Setup BlackBerry Device Manager
+		try:
+			bb_manager = BlackBerryManager()
+			bb_manager.initialize()
+			self.bb = bb_manager.get_blackberry()
+			self.bb.initialize()
+		except: 
+			print "[+] ERROR - ENSURE YOUR BLACKBERRY DEVICE IS CONNECTED CORRECTLY"
 
 
 
@@ -68,7 +68,7 @@ class sendMail:
 		# msg['To'] = to[0]
 
 		
-		html = "Hi Carey,\n\n Please find my request below:\n \n Date: " + str(row[1]) + "\n Pick Up Time: " + str(row[2]) + "\n Pick Up Location: " + str(row[3]) + "\n Duration: " + str(row[4]) + "\n Vehicle Type: " + str(row[5]) + "\n Cost Center: " + str(row[6]) + "\n GL Code: " + str(row[7]) + "\n Additional Information: " + str(row[8]) + "\n Tester Name: " + str(row[9]) + "\n Tester Email: " + str(row[10]) + "\n \n Please do not respond directly to this email as the inbox is unregulated. Email the tester directly. "
+		html = "Hi Carey,\n\n Please find my request below:\n \n Date: " + str(row[1]) + "\n Pick Up Time: " + str(row[2]) + "\n Pick Up Location: " + str(row[3]) + "\n Duration: " + str(row[4]) + "\n Vehicle Type: " + str(row[5]) + "\n Cost Center: " + str(row[6]) + "\n GL Code: " + str(row[7]) + "\n Additional Information: " + str(row[8]) + "\n \n Tester Name: " + str(row[9]) + "\n \n Tester Email: " + str(row[10]) + "\n \n Please do not respond directly to this email as the inbox is unregulated. Email the tester directly. "
 		#print html
 
 		msg = html
@@ -96,10 +96,13 @@ class sendMail:
 			print "[+] MESSAGE WAS NOT SENT. RESTART SERVER"
 			return False
 
-			
 	def close(self):
 		#Close connection with server. 
 		self.server.quit()
 
 	def getSender(self):
 		return self.gmail_sender
+
+
+
+
