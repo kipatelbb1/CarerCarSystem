@@ -272,3 +272,8 @@ th, tr, td
 	font-size: 1.2em; 
 
 }
+
+input[type="password"]
+{
+	width: 300px; 
+}
