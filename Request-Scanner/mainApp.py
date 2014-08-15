@@ -30,12 +30,12 @@ while True:
 	#Create list of people to send email too.
 
 	#Enter all constant emails here. (EMAILS MUST BE SEPATED WITH ;)
-	to = "kipatel@blackberry.com"
+	to = "res@careyuk.com;kipatel@blackberry.com"
 
 	#Add FTS managers. 
-	#fts_management = 'ehayden@blackberry.com;fmastrangioli@blackberry.com;gdamaro@blackberry.com'
+	fts_management = 'ehayden@blackberry.com;fmastrangioli@blackberry.com;gdamaro@blackberry.com'
 	#print fts_management
-	#to = to + ";" + fts_management 
+	to = to + ";" + fts_management 
 	
 
 	#For each record.. 
