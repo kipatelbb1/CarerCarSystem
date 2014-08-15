@@ -17,7 +17,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-	<title>Carey Car Form | FTS EMEA Tools | Blackberry Ltd</title>
+	<title>Carey Car Form | FTS EMEA Tools | BlackBerry Ltd</title>
 
 	<!-- META -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -311,7 +311,7 @@
 
 			<div class="col-xs-12 col-sm-offset-5 col-sm-4">
 				<div class="footnote">
-					Carey Car Management | FTS EMEA Team | Blackberry Ltd
+					Carey Car Scheduling System | FTS EMEA Team | BlackBerry Ltd
 				</div>
 			</div>
 			
