@@ -49,6 +49,13 @@ class scanDB:
 			#Get all other data. 
 			PLoc = row[3]
 			Duration = row[4]
+			#print Duration
+			if(str(Duration) == "30"):
+				Duration = str(Duration) + " Mins"
+			else:
+				Duration = str(Duration) + " Hours"
+			
+
 			Veh_Type = row[5]
 			CCenter = row[6]
 			GLCode = row[7]
