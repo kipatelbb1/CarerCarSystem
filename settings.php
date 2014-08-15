@@ -111,7 +111,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Preffered Pick Up Location
+								Preferred Pick Up Location
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
@@ -121,7 +121,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Preffered Drop Off Location
+								Preferred Drop Off Location
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
