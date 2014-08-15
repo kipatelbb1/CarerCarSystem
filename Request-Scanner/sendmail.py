@@ -99,7 +99,8 @@ class sendMail:
 
 	def closeBBCon(self):
 		#code to close connection
-		
+		print "[+] Closing Connection with BlackBerry.."
+		bb.close()
 		return True
 
 	def close(self):
