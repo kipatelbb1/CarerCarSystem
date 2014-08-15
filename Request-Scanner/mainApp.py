@@ -2,7 +2,7 @@ from checkRequests import scanDB
 from sendmail import sendMail
 import time 
 
-time_to_sleep = 60 #Every 10 mins
+time_to_sleep = 60*5 #Every 10 mins
 
 print "[+] Carer Car System Initialising.."
 #Initialise MYSQL database connection. 

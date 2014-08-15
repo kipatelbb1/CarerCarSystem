@@ -96,6 +96,12 @@ class sendMail:
 			print "[+] MESSAGE WAS NOT SENT. RESTART SERVER"
 			return False
 
+
+	def closeBBCon(self):
+		#code to close connection
+		
+		return True
+
 	def close(self):
 		#Close connection with server. 
 		self.server.quit()
