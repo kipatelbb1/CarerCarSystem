@@ -15,7 +15,7 @@ db = scanDB()
 while True: 
 	con = db.connect("localhost", "root", "", "carey_car", 3306)
 	#Execute Query and store 2D array in rows. 
-	rows = db.getRequests(con, "SELECT r.requestid, r.date_request, r.PTime, r.PLoc, r.Duration, r.Veh_Type, r.Cost_Center, r.GL_Code, r.add_comments, t.fName, t.lName, t.email FROM request r, tester t, requestLine rl WHERE rl.requestID = r.requestID AND rl.testerID = t.testerID AND r.status = 'NOT_SENT'  GROUP BY r.requestID ORDER BY r.requestID")
+	rows = db.getRequests(con, "SELECT r.requestid, r.date_request, r.PTime, r.PLoc, r.Duration, r.Veh_Type, r.Cost_Center, r.GL_Code, r.add_comments, t.fName, t.lName, t.email, r.numTesters FROM request r, tester t, requestLine rl WHERE rl.requestID = r.requestID AND rl.testerID = t.testerID AND r.status = 'NOT_SENT'  GROUP BY r.requestID ORDER BY r.requestID")
 
        
 	#Create Mail Instance. 
@@ -60,8 +60,11 @@ while True:
 			db.updateStatus(con, "UPDATE request SET status='SENT' WHERE requestID=" + str(row[0]) + "")
 
 
+	#Close connection to DB
 	con.close()
-	print "[+] Sleeping for " + str(time_to_sleep) + " seconds."
+	#Close Connection to BB
+	mail.closeBBCon()
+	print "[+] Sleeping for " + str(time_to_sleep) + " seconds. ("+ str(time_to_sleep/60) +" Mins)"
 	time.sleep(time_to_sleep)
 
 

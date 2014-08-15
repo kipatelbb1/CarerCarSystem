@@ -57,9 +57,10 @@ class scanDB:
 			#Get the testers name and concat. 
 			testerName = row[9] + " " + row[10]
 			testerEmail = row[11]
+			numTesters = row[12]
 
 			#Add all the values to a list. 
-			one_row = [requestID, date_request, PTime, PLoc, Duration, Veh_Type, CCenter, GLCode, comments, testerName, testerEmail]
+			one_row = [requestID, date_request, PTime, PLoc, Duration, Veh_Type, CCenter, GLCode, comments, testerName, testerEmail, numTesters]
 			#Append the record to the table. 
 			rows.append(one_row)
 
