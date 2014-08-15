@@ -33,9 +33,9 @@ while True:
 	to = "kipatel@blackberry.com"
 
 	#Add FTS managers. 
-	#fts_management = 'ehayden@blackberry.com;fmastrangioli@blackberry.com;gdamaro@blackberry.com'
+	fts_management = 'ehayden@blackberry.com;fmastrangioli@blackberry.com;gdamaro@blackberry.com'
 	#print fts_management
-	#to = to + ";" + fts_management 
+	to = to + ";" + fts_management 
 	
 
 	#For each record.. 
