@@ -22,16 +22,15 @@
 	$Duration = $_POST['duration']; 
 	$Drop = $_POST['DLocation']; 
 	$Veh = $_POST['veh_type'];
+	$numOfTest = $_POST['num_of_testers']; 
 	$status = "NOT_SENT"; 
 	
 	
-	
-
 	include 'payment_credentials.php';
 
 	$add_Comments = $_POST['add']; 
 
-	$query = "INSERT INTO request(date_request, PTime, PLoc, Duration, DLocation , Veh_Type, Cost_Center, GL_Code, add_Comments, status) VALUES ('$Date', '$PTime', '$PLoc' , '$Duration' , '$Drop', '$Veh', '$CCenter', '$GLCode' , '$add_Comments', '$status')"; 
+	$query = "INSERT INTO request(date_request, PTime, PLoc, Duration, DLocation , Veh_Type, Cost_Center, GL_Code, add_Comments, status, numTesters) VALUES ('$Date', '$PTime', '$PLoc' , '$Duration' , '$Drop', '$Veh', '$CCenter', '$GLCode' , '$add_Comments', '$status', '$numOfTest')"; 
 	//echo $Date; 
 	//$query = "INSERT INTO request(date_request) VALUES ('$Date')"; 
 	
