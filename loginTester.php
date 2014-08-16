@@ -1,20 +1,20 @@
 <?php
 
 	//If the file has been posted too then try login operation. 
-	if(isset($_POST['name']))
+	if(isset($_POST['email']))
 	{
 		//Connect to the database. 
 		include 'connection.php';
 
 		//Store the name and password in variables. 
-		$username = $_POST['name']; 
+		$username = $_POST['email']; 
 		$password = $_POST['password']; 
 
 
 		//Enrypt the password + SALT. 
 		$password = md5($password . "BLACKBERRY"); 
 		//Determine if the username AND password are in the database. 
-		$query = "SELECT * FROM tester WHERE username='$username' AND Password='$password' ";
+		$query = "SELECT * FROM tester WHERE email='$username' AND Password='$password' ";
 
 		//Execute the query. 
 		$set = mysqli_query($con, $query); 
@@ -23,7 +23,7 @@
 		while($row = mysqli_fetch_array($set))
 		{ 
 			//If the username and password match then create a session. 
-			if($row['username'] == $username && $row['Password'] == $password)
+			if($row['email'] == $username && $row['Password'] == $password)
 			{
 				//If there is no session then start one. 
 				if(!isset($_SESSION)) 
@@ -36,8 +36,7 @@
 
 				//STORE Session variables - Accessed throughout the system. 
 				$_SESSION['id'] = $row['testerID']; 
-				$_SESSION['name'] = $row['username']; 
-
+				$_SESSION['name'] = $row['fName'] . " " .  $row['lName']; 
 				$_SESSION['fName'] = $row['fName']; 
 				$_SESSION['lName'] = $row['lName']; 
 

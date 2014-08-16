@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-	<title>Login | Carey Car Form | FTS EMEA Tools | Blackberry Ltd</title>
+	<title>Login | Carey Car Form | FTS EMEA Tools | BlackBerry Ltd</title>
 
 	<!-- META -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -41,7 +41,7 @@
 					<div class="panel-body">
 
 						<form method="POST" action="loginTester.php">
-							Username: <input type="text" name="name" /> <br/><br/>
+							Email: <input type="text" name="email" /> <br/><br/>
 							Password: <input type="password" name="password" /> <br/><br/>
 
 							<input type="submit" Value="Submit">

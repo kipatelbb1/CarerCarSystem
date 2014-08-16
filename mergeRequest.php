@@ -44,6 +44,7 @@
 		$Duration = $_COOKIE['duration']; 
 		$Drop =  $_COOKIE['DLocation']; 
 		$Veh = $_COOKIE['veh_type']; 
+		$numOfTest = $_COOKIE['num_of_testers']; 
 
 		//They may or may not specify additional comments. 
 		if(isset($_COOKIE['add']))
@@ -59,12 +60,11 @@
 	 
 		//Set the Cost Center and GLCode (Admin). 
 		//POTENTIONAL FOR DYNAMIC HERE. 
-		$CCenter = "313000"; 
-		$GLCode = "650003"; 
+		include 'payment_credentials.php'; 
 
 		
 		//Create a query to insert a whole new request. 
-		$query = "INSERT INTO request(date_request, PTime, PLoc, Duration, DLocation , Veh_Type, Cost_Center, GL_Code, add_Comments) VALUES ('$Date', '$PTime', '$PLoc' , '$Duration' , '$Drop', '$Veh', '$CCenter', '$GLCode' , '$add_Comments')"; 
+		$query = "INSERT INTO request(date_request, PTime, PLoc, Duration, DLocation , Veh_Type, Cost_Center, GL_Code, add_Comments, status, numTesters) VALUES ('$Date', '$PTime', '$PLoc' , '$Duration' , '$Drop', '$Veh', '$CCenter', '$GLCode' , '$add_Comments', 'NOT_SENT', '$numOfTest')"; 
 		//Execute Query. 		
 		mysqli_query($con,$query)or die(mysqli_error($con)); 
 		

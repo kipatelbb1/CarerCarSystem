@@ -28,6 +28,7 @@
 	$Drop = $_POST['DLocation']; 
 	$Veh = $_POST['veh_type']; 
 	$add = $_POST['add'];
+	$numOfTest = $_POST['num_of_testers']; 
 
 	//Set Cookies to flag that these variables exist, this is used in the case a new request has to be made. 
 	setcookie("date_request", $Date);
@@ -36,6 +37,7 @@
 	setcookie("duration", $Duration); 
 	setcookie("DLocation", $Drop); 
 	setcookie("veh_type", $Veh); 
+	setcookie("num_of_testers", $numOfTest); 
 	setcookie("add", $add);
 	//Get the time from the posted time. 
 	$tranTime = substr($PTime, 0,2); 

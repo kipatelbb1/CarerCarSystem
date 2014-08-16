@@ -15,7 +15,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-	<title>Carey Car Form | FTS EMEA Tools | Blackberry Ltd</title>
+	<title>Carey Car Form | FTS EMEA Tools | BlackBerry Ltd</title>
 
 	<!-- META -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -111,7 +111,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Preffered Pick Up Location
+								Preferred Pick Up Location
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
@@ -121,7 +121,7 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Preffered Drop Off Location
+								Preferred Drop Off Location
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
@@ -158,6 +158,16 @@
 
 			<div class="col-xs-12">
 					<div class="alert alert-danger" role="alert" id="settings-error">Ensure you enter all details!</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="carey_contact">Carey Car Contact Details: (Only for urgent contact)<br/><br/>
+					Email: <a href="mailto:res@careyuk.com">res@careyuk.com</a><br/>
+					Tel: <a href="tel:02083267600 ">0208 3267600 </a>
+				</div>
 
 			</div>
 
@@ -182,7 +192,7 @@
 
 			<div class="col-xs-12 col-sm-offset-5 col-sm-4">
 				<div class="footnote">
-					Carey Car Management | FTS EMEA Team | Blackberry Ltd
+					Carey Car Scheduling System | FTS EMEA Team | BlackBerry Ltd
 				</div>
 			</div>
 			

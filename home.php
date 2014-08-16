@@ -17,7 +17,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-	<title>Carey Car Form | FTS EMEA Tools | Blackberry Ltd</title>
+	<title>Carey Car Form | FTS EMEA Tools | BlackBerry Ltd</title>
 
 	<!-- META -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -67,6 +67,7 @@
 				  <li class="active"><a href="#">Home</a></li>
 				  <li><a href="request.php">My Requests</a></li>
 				  <li><a href="settings.php">Settings</a></li>
+				  
 				  <h4 class="welcome">Welcome <?php echo $_SESSION['fName'] . " " . $_SESSION['lName'] ?></h4>
 				</ul>
 
@@ -94,177 +95,179 @@
 						  <h3 class="panel-title">Form</h3>
 						</div>
 
+
 			 
 					<div class="panel-body">
-					<form action="determineSimilar.php" method="POST" id="requestForm" onsubmit="return checkInputs();">
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Date: <div class="required_input">*</div>
-							</div>
+						<form action="determineSimilar.php" method="POST" id="requestForm" onsubmit="return checkInputs();">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Date: <div class="required_input">*</div>
+								</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" id="datepicker" name="date_request">
-							
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Pick Up Time: <div class="required_input">*</div>
-							</div>
-
-							<div class="col-xs-12 col-sm-6 form-label">
+								<div class="col-xs-12 col-sm-6 form-label">
+									 <input type="text" id="datepicker" name="date_request">
 								
-								<select name="pick_up" id="pick_up">
-									<option value="1000">10:00</option>
-									<option value="1030">10:30</option>
-									<option value="1100">11:00</option>
-									<option value="1130">11:30</option>
-									<option value="1200">12:00</option>
-									<option value="1230">12:30</option>
-									<option value="1300">13:00</option>
-									<option value="1330">13:30</option>
-									<option value="1400">14:00</option>
-									<option value="1430">14:30</option>
-									<option value="1500">15:00</option>
-									<option value="1530">15:30</option>
-									<option value="1600">16:00</option>
-									<option value="1630">16:30</option>
-									<option value="1700">17:00</option>
-									<option value="1730">17:30</option>
-									<option value="1800">18:00</option>
-								</select>
-
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Pick Up Location: <div class="required_input">*</div>
+								</div>
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" value="<?php echo $row['PLocation'] ?>" name="loc" id="PLoc">
-							</div>
-						</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Pick Up Time: <div class="required_input">*</div>
+								</div>
 
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Drop Off Location:
-							</div>
-
-							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" value="<?php echo $row['DLocation'] ?>" name="DLocation" id="DLoc">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Duration:
-							</div>
-
-							<div class="col-xs-12 col-sm-6 form-label">
-								
-
-								 <select name="duration">
-									<option value="30">30 Mins</option>
-									<option value="1">1 Hours</option>
-									<option value="1.5">1.5 Hours</option>
-									<option value="2">2 Hour</option>
-									<option value="2.5">2.5 Hour</option>
-									<option value="3">3 Hours</option>
-									<option value="3.5">3.5 Hours</option>
-									<option value="4">4 Hours</option>
-									<option value="4.5">4.5 Hours</option>
-									<option value="5">5 Hours</option>
-									<option value="5.5">5.5 Hours</option>
-									<option value="6">6 Hours</option>
-									<option value="6.5">6.5 Hours</option>
-									<option value="7">7 Hours</option>
-									<option value="7.5">7.5 Hours</option>
-									<option value="8">8 Hours</option>
-								</select>
-							</div>
-						</div>
-
-						<!-- NOT FUNCTIONALLY REQUIRED BUT TESTER MAY WANT TO CHANGE CONTACT NUMBER -->
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Tester Name:
-							</div>
-
-							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" value="<?php echo $_SESSION['name'] ?>" name="name" id="tester" disabled>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Contact Number: <div class="required_input">*</div>
-							</div>
-
-							<div class="col-xs-12 col-sm-6 form-label">
-								 <input type="text" value="<?php echo $row['MobileNo'] ?>" name="num" id="num">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Number Of Testers:
-							</div>
-
-							<div class="col-xs-12 col-sm-6 form-label">
-								 <select name="num_of_testers">
-
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
+								<div class="col-xs-12 col-sm-6 form-label">
 									
-								</select> </div>
-						</div>
+									<select name="pick_up" id="pick_up">
+										<option value="1000">10:00</option>
+										<option value="1030">10:30</option>
+										<option value="1100">11:00</option>
+										<option value="1130">11:30</option>
+										<option value="1200">12:00</option>
+										<option value="1230">12:30</option>
+										<option value="1300">13:00</option>
+										<option value="1330">13:30</option>
+										<option value="1400">14:00</option>
+										<option value="1430">14:30</option>
+										<option value="1500">15:00</option>
+										<option value="1530">15:30</option>
+										<option value="1600">16:00</option>
+										<option value="1630">16:30</option>
+										<option value="1700">17:00</option>
+										<option value="1730">17:30</option>
+										<option value="1800">18:00</option>
+									</select>
 
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Vehicle Type: 
+								</div>
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
-								 <select name="veh_type">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Pick Up Location: <div class="required_input">*</div>
+								</div>
 
-								<option value="executive">Executive Saloon</option>
-								<option value="mpv">MPV</option>
-
-							</select></div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 form-label">
-								Additional Comments: 
+								<div class="col-xs-12 col-sm-6 form-label">
+									 <input type="text" value="<?php echo $row['PLocation'] ?>" name="loc" id="PLoc">
+								</div>
 							</div>
 
-							<div class="col-xs-12 col-sm-6 form-label">
-								<input type="text" name="add" id="add" /></div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Drop Off Location:
+								</div>
+
+								<div class="col-xs-12 col-sm-6 form-label">
+									 <input type="text" value="<?php echo $row['DLocation'] ?>" name="DLocation" id="DLoc">
+								</div>
 							</div>
-						</div>
 
-						<input type="hidden" name="testerID" value="<?php echo $_SESSION['id'] ?>" />
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Duration:
+								</div>
 
+								<div class="col-xs-12 col-sm-6 form-label">
+									
 
-						<div class="row">
-							<div class="col-xs-12 col-sm-offset-5 form-label">
-								<input type="submit" value="Submit"/>
+									 <select name="duration">
+										<option value="30">30 Mins</option>
+										<option value="1">1 Hours</option>
+										<option value="1.5">1.5 Hours</option>
+										<option value="2">2 Hour</option>
+										<option value="2.5">2.5 Hour</option>
+										<option value="3">3 Hours</option>
+										<option value="3.5">3.5 Hours</option>
+										<option value="4">4 Hours</option>
+										<option value="4.5">4.5 Hours</option>
+										<option value="5">5 Hours</option>
+										<option value="5.5">5.5 Hours</option>
+										<option value="6">6 Hours</option>
+										<option value="6.5">6.5 Hours</option>
+										<option value="7">7 Hours</option>
+										<option value="7.5">7.5 Hours</option>
+										<option value="8">8 Hours</option>
+									</select>
+								</div>
 							</div>
-						</div>
 
-						<div class="row">
-							<div class="col-xs-12  form-label" >
-								<div class="alert alert-danger" role="alert" id="request_validation">Ensure you enter all details!</div>
+							<!-- NOT FUNCTIONALLY REQUIRED BUT TESTER MAY WANT TO CHANGE CONTACT NUMBER -->
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Tester Name:
+								</div>
+
+								<div class="col-xs-12 col-sm-6 form-label">
+									 <input type="text" value="<?php echo $_SESSION['name'] ?>" name="name" id="tester" disabled>
+								</div>
 							</div>
-						</div>
+
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Contact Number: <div class="required_input">*</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 form-label">
+									 <input type="text" value="<?php echo $row['MobileNo'] ?>" name="num" id="num">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Number Of Testers:
+								</div>
+
+								<div class="col-xs-12 col-sm-6 form-label">
+									 <select name="num_of_testers">
+
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										
+									</select> </div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Vehicle Type: 
+								</div>
+
+								<div class="col-xs-12 col-sm-6 form-label">
+									 <select name="veh_type">
+
+									<option value="Executive">Executive Saloon</option>
+									<option value="MPV">MPV</option>
+									<option value="Other">Other(Specify below)</option>
+
+								</select></div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 form-label">
+									Additional Comments: 
+								</div>
+
+								<div class="col-xs-12 col-sm-6 form-label">
+									<input type="text" name="add" id="add" /></div>
+								</div>
+							</div>
+
+							<input type="hidden" name="testerID" value="<?php echo $_SESSION['id'] ?>" >
 
 
-					</form>
+							<div class="row">
+								<div class="col-xs-12 col-sm-offset-5 form-label">
+									<input type="submit" value="Submit"/>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12  form-label" >
+									<div class="alert alert-danger" role="alert" id="request_validation">Ensure you enter all details!</div>
+								</div>
+							</div>
+
+
+						</form>
 					</div>
 
 
@@ -341,9 +344,6 @@
 
 		<div class="row hidden-xs">
 			<div class="col-xs-12">
-
-				
-
 
 			<table>
 				<tr>
@@ -601,7 +601,7 @@
 
 			<div class="col-xs-12 col-sm-offset-5 col-sm-4">
 				<div class="footnote">
-					Carey Car Management | FTS EMEA Team | Blackberry Ltd
+					Carey Car Scheduling System | FTS EMEA Team | BlackBerry Ltd
 				</div>
 			</div>
 			

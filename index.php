@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-	<title>Login | Carey Car Form | FTS EMEA Tools | Blackberry Ltd</title>
+	<title>Login | Carey Car Form | FTS EMEA Tools | BlackBerry Ltd</title>
 
 	<!-- META -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -63,11 +63,11 @@
 
 							<div class="row">
 								<div class="col-xs-12 col-sm-6 form-label setting-form">
-									Username<div class="required_input">*</div>
+									Email<div class="required_input">*</div>
 								</div>
 
 								<div class="col-xs-12 col-sm-6 form-label setting-form">
-									<input type="text" name="name" />
+									<input type="text" name="email" value="<?php if(isset($_COOKIE['email'])){ echo $_COOKIE['email'];} ?>"/>
 								</div>
 							</div>
 					
@@ -140,21 +140,21 @@
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Preffered Pick Up Location
+								Prefered Pick Up Location
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text" id="PLoc" name="PLoc" >
+								 <input type="text" id="PLoc" value="200 Bath Road, Slough, SL1 3XE, UK" name="PLoc" >
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								Preffered Drop Off Location
+								Prefered Drop Off Location
 							</div>
 
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
-								 <input type="text"  id="DLoc" name="DLocation" >
+								 <input type="text" value="200 Bath Road, Slough, SL1 3XE, UK" id="DLoc" name="DLoc" >
 							</div>
 						</div>
 
@@ -168,6 +168,7 @@
 							</div>
 						</div>
 
+						
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 form-label setting-form">
 								Password<div class="required_input">*</div>
@@ -195,10 +196,6 @@
 
 						<div id="errReg">
 
-
-
-
-
 						</div>
 					</div>
 				</div>
@@ -224,7 +221,7 @@
 
 			<div class="col-xs-12 col-sm-offset-5 col-sm-4">
 				<div class="footnote">
-					Carey Car Management | FTS EMEA Team | Blackberry Ltd
+					Carey Car Scheduling System | FTS EMEA Team | BlackBerry Ltd
 				</div>
 			</div>
 			

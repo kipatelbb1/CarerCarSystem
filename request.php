@@ -18,7 +18,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-	<title>Carey Car Form | FTS EMEA Tools | Blackberry Ltd</title>
+	<title>Carey Car Form | FTS EMEA Tools | BlackBerry Ltd</title>
 
 	<!-- META -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -118,10 +118,13 @@
 						
 						while($row = mysqli_fetch_array($set))
 						{
+							#Convert the MYSQL date to a time
+							$date_req = strtotime( $row['date_request'] );
 							echo "<tr>"; 
-								echo "<td>" . $row['requestID'] . "</td>"; 
-								echo "<td>" . $row['date_request'] . "</td>";
-								echo "<td>" . $row['PTime'] . "</td>"; 
+								echo "<td><a href='view_request.php?reqid=" . $row['requestID'] . "'>" . $row['requestID'] . "</a></td>"; 
+								#Apply dd-mm-yyyy format. 
+								echo "<td>" . date( 'd-m-Y', $date_req ) . "</td>";
+								echo "<td>" . substr($row['PTime'], 3) . "</td>"; 
 								echo "<td>" . $row['PLoc'] . "</td>"; 
 								echo "<td>" . $row['Duration'] . "</td>"; 
 								echo "<td>" . $row['DLocation'] . "</td>"; 
@@ -131,9 +134,7 @@
 
 
 					?>
-
-					<!-- PHP SCRIPT TO POPULATE WITH DB ENTRIES -->
-					
+				
 				</table>
 			</div>
 		</div>
@@ -157,7 +158,7 @@
 						
 							echo "<div class='panel-body status_format'>"; 
 
-
+								echo "<a href='view_request.php?reqid=" . $row['requestID'] . "'>";
 								echo "<div class='mobile-request'>"; 
 									echo "<span> Request ID: " . $row['requestID'] . "</span>" . "<br/>"; 
 									echo "<span> Date: " . $row['date_request'] . "</span>". "<br/>";
@@ -167,6 +168,7 @@
 									echo "<span> Drop Off Location: " . $row['DLocation'] . "</span>". "<br/>"; 
 									echo "<span> Vehicle Type: " . $row['Veh_Type'] . "</span>". "<br/>"; 
 								echo "</div>"; 
+								echo "</a>"; 
 
 							echo "</div>"; 
 
@@ -200,7 +202,7 @@
 
 			<div class="col-xs-12 col-sm-offset-5 col-sm-4">
 				<div class="footnote">
-					Carey Car Management | FTS EMEA Team | Blackberry Ltd
+					Carey Car Scheduling System | FTS EMEA Team | BlackBerry Ltd
 				</div>
 			</div>
 			
